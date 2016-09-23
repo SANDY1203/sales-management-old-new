@@ -92,11 +92,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-<<<<<<< HEAD
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-=======
                  <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
->>>>>>> origin/combine
                 </div>
               </li>
             </ul>
@@ -131,11 +127,7 @@
               </span>
         </div>
       </form>
-<<<<<<< HEAD
-           <!-- /.search form -->
-=======
       <!-- /.search form -->
->>>>>>> origin/combine
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
 	          
@@ -145,13 +137,8 @@
             
           </a>
           
-<<<<<<< HEAD
-       
         </li>
-=======
-        </li>
-		
->>>>>>> origin/combine
+
 		<li class="treeview">
           <a href="company.php">
             <i class="fa fa-table"></i> <span>COMPANY</span>
@@ -166,13 +153,7 @@
           </a>
           
         </li>
-<<<<<<< HEAD
-		
-       
-          
-        </li>
-=======
->>>>>>> origin/combine
+
 		<li class="treeview">
           <a href="project.php">
             <i class="fa fa-table"></i> <span>PROJECT</span>
@@ -187,18 +168,15 @@
           </a>
           
         </li>
-		<li class="treeview">
+		<li class="active">
           <a href="proserv_project.php">
             <i class="fa fa-table"></i> <span>PROSERV PROJECT</span>
             
           </a>
           
         </li>
-<<<<<<< HEAD
 	
-=======
 		
->>>>>>> origin/combine
         
         
       </ul>
@@ -246,32 +224,24 @@
                     <input type="text" id="id25" placeholder="ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="proserv_id">proserv_id</label>
-                    <input type="text" id="proserv_id1" placeholder="proserv_id" class="form-control"/>
+                    <label for="proserv_id">Proserv ID</label>
+                    <input type="text" id="proserv_id1" placeholder="Proserv ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_contractor_id">project_contractor_id</label>
-                    <input type="text" id="project_contractor_id1" placeholder="project_contractor_id" class="form-control"/>
+                    <label for="project_contractor_id">Project Contractor ID</label>
+                    <input type="text" id="project_contractor_id1" placeholder="Project Contractor ID" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="project_price">project_price</label>
-                    <input type="text" id="project_price1" placeholder="project_price" class="form-control"/>
+                    <label for="project_price">Project Price</label>
+                    <input type="text" id="project_price1" placeholder="Project Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_team">project_team</label>
-                    <input type="text" id="project_team1" placeholder="project_team" class="form-control"/>
+                    <label for="project_team">Project Team</label>
+                    <input type="text" id="project_team1" placeholder="Project Team" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_status">project_status</label>
-<<<<<<< HEAD
-                    <input type="text" id="project_status1" placeholder="project_status" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="category_proserv_project">category_proserv_project</label>
-                    <input type="text" id="category_proserv_project1" placeholder="category_proserv_project" class="form-control"/>
-                </div>
-=======
+                    <label for="project_status">Project Status</label>
 					<select class="selectpicker" id="project_status1">
   <option>lead</option>
   <option>opportunity</option>
@@ -292,13 +262,12 @@
                     </div>
    
 				<div class="form-group">
-                    <label for="category_proserv_project">category_proserv_project</label>
+                    <label for="category_proserv_project">Category Proserv Project</label>
 					<select class="selectpicker" id="category_proserv_project1">
   <option>service</option>
   <option>project</option>
   </select>
                     </div>
->>>>>>> origin/combine
            
 				
             </div>
@@ -323,32 +292,24 @@
 
                      
 				<div class="form-group">
-                    <label for="proserv_id">proserv_id</label>
-                    <input type="text" id="update_proserv_id1" placeholder="proserv_id" class="form-control"/>
+                    <label for="proserv_id">Proserv ID</label>
+                    <input type="text" id="update_proserv_id1" placeholder="Proserv ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_contractor_id">project_contractor_id</label>
-                    <input type="text" id="update_project_contractor_id" placeholder="project_contractor_id" class="form-control"/>
+                    <label for="project_contractor_id">Project Contractor ID</label>
+                    <input type="text" id="update_project_contractor_id" placeholder="Project Contractor ID" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="project_price">project_price</label>
-                    <input type="text" id="update_project_price1" placeholder="project_price" class="form-control"/>
+                    <label for="project_price">Project Price</label>
+                    <input type="text" id="update_project_price1" placeholder="Project Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_team">project_team</label>
-                    <input type="text" id="update_project_team1" placeholder="project_team" class="form-control"/>
+                    <label for="project_team">Project Team</label>
+                    <input type="text" id="update_project_team1" placeholder="Project Team" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_status">project_status</label>
-<<<<<<< HEAD
-                    <input type="text" id="update_project_status1" placeholder="project_status" class="form-control"/>
-                </div>
-				<div class="form-group">
-                    <label for="category_proserv_project">category_proserv_project</label>
-                    <input type="text" id="update_category_proserv_project" placeholder="category_proserv_project" class="form-control"/>
-                </div>
-=======
+                    <label for="project_status">Project Status</label>
 					<select class="selectpicker" id="update_project_status1">
   <option>lead</option>
   <option>opportunity</option>
@@ -368,13 +329,12 @@
   </select> 
                     </div>
 				<div class="form-group">
-                    <label for="category_proserv_project">category_proserv_project</label>
+                    <label for="category_proserv_project">Category Proserv Project</label>
 					<select class="selectpicker" id="update_category_proserv_project">
   <option>service</option>
   <option>project</option>
   </select>
                     </div>
->>>>>>> origin/combine
 
             </div>
             <div class="modal-footer">

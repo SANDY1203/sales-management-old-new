@@ -121,48 +121,30 @@
               </span>
         </div>
       </form>
-      <!-- /.search form -->
+     <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
 	          
-<<<<<<< HEAD
-        <li class="treeview">
-=======
-        <li class="active treeview">
-<<<<<<< HEAD
-          <a href="index.html">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            
-          
-        </li>
-		<li class="active treeview">
-=======
->>>>>>> origin/combine
+        <li>
+		<li class="active">
           <a href="index.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             
           </a>
           
-<<<<<<< HEAD
-        <li class="treeview">
-=======
-        <li class="active treeview">
->>>>>>> origin/combine
->>>>>>> origin/combine
+        </li>
+		
+		<li class="treeview">
           <a href="pages/tables/project.php">
             <i class="fa fa-table"></i> <span>PROJECT</span>
             
           </a>
           
-<<<<<<< HEAD
-       
-		
-        
-        
-=======
         </li>
 		
->>>>>>> origin/combine
+		
+        
+        
       </ul>
     </section>
     <!-- /.sidebar -->

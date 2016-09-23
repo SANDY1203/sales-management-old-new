@@ -92,11 +92,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-<<<<<<< HEAD
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-=======
                  <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
->>>>>>> origin/combine
                 </div>
               </li>
             </ul>
@@ -131,11 +127,7 @@
               </span>
         </div>
       </form>
-<<<<<<< HEAD
-           <!-- /.search form -->
-=======
       <!-- /.search form -->
->>>>>>> origin/combine
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
 	          
@@ -145,13 +137,8 @@
             
           </a>
           
-<<<<<<< HEAD
-       
         </li>
-=======
-        </li>
-		
->>>>>>> origin/combine
+	
 		<li class="treeview">
           <a href="company.php">
             <i class="fa fa-table"></i> <span>COMPANY</span>
@@ -166,13 +153,7 @@
           </a>
           
         </li>
-<<<<<<< HEAD
-		
-       
-          
-        </li>
-=======
->>>>>>> origin/combine
+	
 		<li class="treeview">
           <a href="project.php">
             <i class="fa fa-table"></i> <span>PROJECT</span>
@@ -180,7 +161,7 @@
           </a>
           
         </li>
-		<li class="treeview">
+		<li class="active">
           <a href="proserv.php">
             <i class="fa fa-table"></i> <span>PROSERV</span>
             
@@ -194,11 +175,8 @@
           </a>
           
         </li>
-<<<<<<< HEAD
 	
-=======
 		
->>>>>>> origin/combine
         
         
       </ul>
@@ -245,33 +223,28 @@
                     <input type="text" id="id24" placeholder="ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="product_name">product_name</label>
-                    <input type="text" id="product_name" placeholder="product_name" class="form-control"/>
+                    <label for="product_name">Product Name</label>
+                    <input type="text" id="product_name" placeholder="Product Name" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="product_description">product_description</label>
-                    <input type="text" id="product_description" placeholder="product_description" class="form-control"/>
+                    <label for="product_description">Product Description</label>
+                    <input type="text" id="product_description" placeholder="Product Description" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="product_start_price">product_start_price</label>
-                    <input type="integer" id="product_start_price" placeholder="product_start_price" class="form-control"/>
+                    <label for="product_start_price">Product Start Price</label>
+                    <input type="integer" id="product_start_price" placeholder="Product Start Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="product_end_price">product_end_price</label>
-                    <input type="integer" id="product_end_price" placeholder="product_end_price" class="form-control"/>
+                    <label for="product_end_price">Product End Price</label>
+                    <input type="integer" id="product_end_price" placeholder="Product End Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="category">category</label>
-<<<<<<< HEAD
-                    <input type="text" id="category" placeholder="category" class="form-control"/>
-                </div>
-=======
+                    <label for="category">Category</label>
                     <select class="selectpicker" id="category">
   <option>service</option>
   <option>product</option>
   </select></div>
->>>>>>> origin/combine
 				
 
             </div>
@@ -296,33 +269,28 @@
 
                      
 				<div class="form-group">
-                    <label for="product_name">product_name</label>
-                    <input type="text" id="update_product_name" placeholder="product_name" class="form-control"/>
+                    <label for="product_name">Product Name</label>
+                    <input type="text" id="update_product_name" placeholder="Product Name" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_1">product_description</label>
-                    <input type="text" id="update_product_description" placeholder="product_description" class="form-control"/>
+                    <label for="ans_1">Product Description</label>
+                    <input type="text" id="update_product_description" placeholder="Product Description" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="ans_2">product_start_price</label>
-                    <input type="integer" id="update_product_start_price" placeholder="product_start_price" class="form-control"/>
+                    <label for="ans_2">Product Start Price</label>
+                    <input type="integer" id="update_product_start_price" placeholder="Product Start Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_3">product_end_price</label>
-                    <input type="integer" id="update_product_end_price" placeholder="product_end_price" class="form-control"/>
+                    <label for="ans_3">Product End Price</label>
+                    <input type="integer" id="update_product_end_price" placeholder="Product End Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_4">category</label>
-<<<<<<< HEAD
-                    <input type="text" id="update_category" placeholder="category" class="form-control"/>
-                </div>
-=======
+                    <label for="ans_4">Category</label>
                     <select class="selectpicker" id="update_category">
   <option>service</option>
   <option>product</option>
   </select></div>
->>>>>>> origin/combine
 				
 
             </div>

@@ -122,6 +122,7 @@
       <ul class="sidebar-menu">
 	          
         <li>
+		<li class="active">
           <a href="index.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             
