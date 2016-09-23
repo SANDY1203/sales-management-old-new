@@ -1,5 +1,256 @@
-<!DOCTYPE html>
-<html>
+<?php 
+if(isset($_POST["submit"]))
+{
+$company = $_POST["company"];
+$address = $_POST["address"];
+$email = $_POST["email"];
+$telephone = $_POST["telephone"];
+$number = $_POST["number"];
+$item = $_POST["item"];
+$price = $_POST["price"];
+$vat = $_POST["vat"];
+$bank = $_POST["bank"];
+$iban = $_POST["iban"];
+$paypal = $_POST["paypal"];
+$com = $_POST["com"];
+$pay = 'Payment information';
+$price = str_replace(",",".",$price);
+$vat = str_replace(",",".",$vat);
+$p = explode(" ",$price);
+$v = explode(" ",$vat);
+$re = $p[0] + $v[0];
+
+/*include("../../../sales-management/AdminLTE-2.3.6-new/pages/tables/ajax/db_connection.php");
+
+$number = 1;
+$total = 0;
+
+    foreach($_POST['checkboxName'] as $value)
+{
+    echo $value.'<br>';
+	
+	$query = mysql_query("SELECT * FROM projects WHERE id = '$value'");
+	WHILE ($rows = mysql_fetch_array($query)):
+	  ${"project_name$number"} = $rows['project_name'];
+      ${"project_desc$number"} = $rows['project_desc'];
+	  ${"project_company_id$number"} = $rows['project_company_id']; // print_r($_GET);       
+	  ${"project_price$number"} = $rows['project_price'];
+	  ${"project_status$number"} = $rows['project_status'];
+	  
+	  
+
+	  echo "${"project_name$number"}";
+	  
+	
+	endwhile;
+	$query1 = mysql_query("SELECT * FROM company WHERE company_id = '${"project_company_id$number"}'");
+	WHILE ($rows = mysql_fetch_array($query1)):
+	  ${"company_id$number"} = $rows['company_id'];
+      ${"company_name$number"} = $rows['company_name'];
+	  ${"company_address$number"} = $rows['company_address']; // print_r($_GET);       
+	  ${"company_phone$number"} = $rows['company_phone'];
+	  ${"company_email$number"} = $rows['company_email'];
+	  
+	  
+	
+
+	  echo "${"company_id$number"}";
+	  $total = $total + ${"project_price$number"};
+	  
+	$number++;
+	endwhile;
+	
+}
+*/
+
+function r($r)
+{
+$r = str_replace("$","",$r);
+$r = str_replace(" ","",$r);
+$r = $r." $";
+return $r;
+}
+$price = r($price);
+$vat = r($vat);
+require('../../../../fpdf181/fpdf.php');
+
+class PDF extends FPDF
+{
+
+function Header()
+{
+if(!empty($_FILES["file"]))
+  {
+$uploaddir = "logo/";
+$nm = $_FILES["file"]["name"];
+$random = rand(1,99);
+move_uploaded_file($_FILES["file"]["tmp_name"], $uploaddir.$random.$nm);
+$this->Image($uploaddir.$random.$nm,15,20,180);
+unlink($uploaddir.$random.$nm);
+}
+$margin = 10;
+$pageWidth = 210;
+$pageHeight = 297;
+$this->Rect( 10, 10 , 190 ,280);
+$this->SetFont('Arial','B',12);
+$this->Ln(1);
+}
+function Footer()
+{
+$this->SetY(-15);
+$this->SetFont('Arial','I',8);
+$this->Cell(0,10,'Page '.$this->PageNo().'/{nb}',0,0,'C');
+}
+function ChapterTitle($num, $label)
+{
+$this->SetFont('Arial','',12);
+$this->SetFillColor(200,220,255);
+$this->Cell(0,6,"$num $label",0,1,'L',true);
+$this->Ln(0);
+}
+function ChapterTitle2($num, $label)
+{
+$this->SetFont('Arial','',12);
+$this->SetFillColor(249,249,249);
+$this->Cell(0,6,"$num $label",0,1,'L',true);
+$this->Ln(0);
+}
+}
+
+$pdf = new PDF();
+$pdf->AliasNbPages();
+$pdf->AddPage();
+$pdf->SetFont('Times','',12);
+$pdf->SetTextColor(32);
+$pdf->Cell(0,35,'',0,1,'L');
+$pdf->Cell(5,7,'',0,0,'L');
+$pdf->Cell(90,7,'INVOICE TO',1,0,'C');
+$pdf->Cell(45,7,'Invoice Number: ',1,0,'L');
+$pdf->Cell(45,7,'Price',1,1,'R');
+$pdf->Cell(5,7,'',0,0,'L');
+$pdf->Cell(90,7,$company,1,0,'C',0);
+$pdf->Cell(45,7,'Invoice Date: ',1,0,'L',0);
+$pdf->Cell(45,7,$price,1,1,'R',0);
+$pdf->Cell(5,7,'',0,0,'L');
+$pdf->Cell(90,7,$address,1,0,'C',0);
+$pdf->Cell(45,7,'PO No.',1,0,'L',0);
+$pdf->Cell(45,7,$price,1,1,'R',0);
+$pdf->Cell(0,0,'',0,1,'R');
+$pdf->Cell(5,7,'',0,0,'L');
+$pdf->Cell(90,7,$email,1,0,'C',0);
+$pdf->Cell(90,7,'TOTAL AMOUNT',1,1,'C',0);
+$pdf->Cell(5,7,'',0,0,'L');
+$pdf->Cell(90,7,$telephone,1,0,'C',0);
+$pdf->Cell(90,7,'KES ',1,0,'C',0);
+$pdf->Cell(0,20,'',0,1,'R');
+$pdf->Cell(5,7,'',0,0,'L');
+$pdf->Cell(110,12,'Iteam Description',1,0,'C');
+$pdf->Cell(30,12,'Unit Price ',1,0,'C');
+$pdf->Cell(10,12,'Qty ',1,0,'C');
+$pdf->Cell(30,12,'Total',1,1,'C');
+
+
+for ($t = 0; $t <= 5; $t++) {
+    
+ 
+$pdf->Cell(5,7,'',0,0,'L');
+$y1 = $pdf->GetY();
+$x1 = $pdf->GetX();
+$width = 110;
+$pdf->MultiCell(110,7,'Iteam Description',1,'C');
+$y = $pdf->GetY();
+$x = $pdf->GetX();
+$pdf->SetXY($x1 + $width, $y1);
+$pdf->Cell(30,7,'Unit Price ',1,0,'C');
+$pdf->Cell(10,7,'Qty ',1,0,'C');
+$pdf->Cell(30,7,'Total',1,1,'C');
+$pdf->SetXY($x, $y);
+
+}
+
+
+
+/*$pdf->MultiCell(110,7,'Iteam Description',1,'C');
+$pdf->Cell(30,7,'Unit Price ',1,0,'C');
+$pdf->Cell(10,7,'Qty ',1,0,'C');
+$pdf->Cell(30,7,'Total',1,1,'C');*/
+
+$pdf->Cell(0,10,'',0,1,'R');
+
+
+$pdf->Cell(5,7,'',0,0,'L');
+$pdf->SetFillColor(0,0,0);
+$pdf->SetTextColor(255,255,255);
+$pdf->Cell(45,7,'Pin No.',1,0,'C',1);
+$pdf->Cell(45,7,'POS15934601',1,0,'C',1);
+$pdf->Cell(45,7,'Subtotal',1,0,'C',1);
+$pdf->Cell(45,7,'KES',1,1,'C',1);
+$pdf->SetFillColor(255,255,255);
+$pdf->Cell(5,7,'',0,0,'L');
+$pdf->SetFillColor(0,0,0);
+$pdf->Cell(45,7,'Served By:',1,0,'C',1);
+$pdf->Cell(45,7,'Bhavya barot',1,0,'C',1);
+$pdf->Cell(45,7,'TAX: VAT 16%',1,0,'C',1);
+$pdf->Cell(45,7,'KES',1,1,'C',1);
+
+$pdf->Cell(0,2,'',0,1,'R');
+$pdf->SetFillColor(255,255,255);
+$pdf->Cell(5,7,'',0,0,'L');
+$pdf->SetFillColor(0,0,0);
+
+$pdf->Cell(45,7,'Mobile:',1,0,'C',1);
+$pdf->Cell(45,7,'07894561235',1,0,'C',1);
+$pdf->SetFont('Times','',15);
+$pdf->Cell(45,7,'GRAND TOTAL',1,0,'C',1);
+$pdf->Cell(45,7,'KES',1,1,'C',1);
+$pdf->SetFillColor(255,255,255);
+$pdf->Cell(5,7,'',0,0,'L');
+$pdf->SetFillColor(0,0,0);
+$pdf->SetFont('Times','',12);
+$pdf->Cell(45,7,'Email',1,0,'C',1);
+$pdf->Cell(45,7,'info@biocard.io',1,0,'C',1);
+$pdf->Cell(45,7,'',1,0,'C',1);
+$pdf->Cell(45,7,'',1,1,'C',1);
+
+$pdf->SetFillColor(255,255,255);
+$pdf->SetTextColor(32);
+$pdf->Cell(0,15,'',0,1,'R');
+$pdf->Cell(180,7,'Sign & Omacle Stemp',0,1,'C',1);
+
+$pdf->Cell(0,20,'',0,1,'R');
+$pdf->SetTextColor(255,0,0);
+$pdf->Cell(180,7,'THANK YOU',0,1,'C',1);
+$pdf->SetTextColor(0,0,0);
+$pdf->SetFont('Times','',9);
+$pdf->Cell(0,5,'',0,1,'R');
+$pdf->Cell(180,7,'We really apprecate your business',0,1,'C',1);
+$pdf->Cell(180,4,'Please send payment within 30 days of receving this invoice',0,1,'C',1);
+$pdf->Cell(180,4,'There will some text',0,1,'C',1);
+
+
+
+
+$pdf->Line(15, $y + 25, 195,$y + 25 );
+$pdf->Line(15, $y + 50, 195, $y + 50);
+$pdf->Line(15, $y + 75, 195, $y + 75);
+$pdf->Line(15, $y + 100, 195, $y + 100);
+$pdf->Line(15, $y + 110, 195, $y + 110);
+
+
+
+
+$pdf->SetFillColor(200,220,255);
+
+
+$filename="invoice.pdf";
+$pdf->Output($filename,'F');
+}
+?>
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,6 +270,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   
    <!-- Jquery JS file -->
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
@@ -39,6 +291,87 @@
     ga('send', 'pageview');
 
 </script>
+
+<style>
+body{background-image:url(img/bg.jpg);
+}
+a{
+color:#999999;
+text-decoration:none;
+}
+a:hover{
+color:#999999;
+text-decoration:underline;
+}
+#content{
+width:800px;
+height:600px;
+background-color:#FEFEFE;
+border: 10px solid rgb(255, 255, 255);
+border: 10px solid rgba(255, 255, 255, .5);
+-webkit-background-clip: padding-box;
+background-clip: padding-box;
+border-radius: 10px;
+opacity:0.90;
+filter:alpha(opacity=90);
+margin:auto;
+}
+#footer{
+width:800px;
+height:30px;
+padding-top:15px;
+color:#666666;
+margin:auto;
+}
+#title{
+width:770px;
+margin:15px;
+color:#999999;
+font-size:18px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+#body{
+width:770px;
+height:360px;
+margin:15px;
+color:#999999;
+font-size:16px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+#body_l{
+width:385px;
+height:360px;
+float:left;
+}
+#body_r{
+width:385px;
+height:360px;
+float:right;
+}
+#name{
+width:width:385px;
+height:40px;
+margin-top:15px;
+}
+input{
+margin-top:10px;
+width:345px;
+height:32px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+border:1px solid #ccc;
+background-image:url(img/paper_fibers.png);
+color:#999;
+margin-left:15px;
+padding:5px;
+}
+#up{
+width:770px;
+height:40px;
+margin:auto;
+margin-top:10px;
+}
+</style>
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -241,67 +574,37 @@
             <!-- /.box-body -->
 			<!-- Modal - Add New Record/User -->
 
+<div id="content">
+<div id="title" align="center">Create a PDF invoice with PHP</div>
+<div id="body">
+<form action="" method="post" enctype="multipart/form-data">
+<div id="body_l">
+<div id="name"><input name="company" placeholder="Insert here your Company Name" type="text" /></div>
+<div id="name"><input name="address" placeholder="Insert here your Company Address" type="text" /></div>
+<div id="name"><input name="email" placeholder="Insert here your Email" type="text" /></div>
+<div id="name"><input name="telephone" placeholder="Insert here your telephone number" type="text" /></div>
+<div id="name"><input name="number" placeholder="Invoice number" type="text" /></div>
+<div id="name"><input name="item" placeholder="Item" type="text" /></div>
+</div>
+<div id="body_r">
+<div id="name"><input name="price" placeholder="Insert here price" type="text" /></div>
+<div id="name"><input name="vat" placeholder="Insert here your VAT" type="text" /></div>
+<div id="name"><input name="bank" placeholder="Insert the name of your Bank" type="text" /></div>
+<div id="name"><input name="iban" placeholder="Insert here your IBAN number" type="text" /></div>
+<div id="name"><input name="paypal" placeholder="Insert here your PayPal address" type="text" /></div>
+<div id="name"><input name="com" placeholder="Add a comment" type="text" /></div>
+</div>
+<div id="up" align="center"><input name="file" type="file" /></div>
+<div id="up" align="center"><input name="submit" style="margin-top:60px;" value="Create your Invoice" type="submit" /><br /><br />
+
 <?php 
-	// include Database connection file 
-	include("ajax/db_connection.php");
-
-	// Design initial table header 
-	$data = '<form method="post" name="template" action="index.php">';
-	$data .= '<table class="table table-bordered table-striped">
-						<tr>
-						<th> </th>
-							<th>id</th>
-					  <th>project_name</th>
-                      <th>project_desc</th>
-                      <th>project_company_id</th>
-					  <th>project_price</th>
-					  <th>project_team</th>
-					  <th>project_status</th>
-					  <th>user_id</th>
-							
-						</tr>';
-
-	$query = "SELECT * FROM projects";
-
-	if (!$result = mysql_query($query)) {
-        exit(mysql_error());
-    }
-
-    // if query results contains rows then featch those rows 
-    if(mysql_num_rows($result) > 0)
-    {
-    	$number = 1;
-    	while($row = mysql_fetch_assoc($result))
-    	{
-    		$data .= '<tr>
-			<td><input type="checkbox" name="checkboxName[]" value='. $row['id'] . '></td>
-				<td>'. $row['id'] . '</td>
-			     <td>'. $row['project_name'] . '</td>
-				 <td>'. $row['project_desc'] . '</td>
-				 <td>'. $row['project_company_id'] . '</td>
-				 <td>'. $row['project_price'] . '</td>
-				 <td>'. $row['project_team'] . '</td>
-				 <td>'. $row['project_status'] . '</td>
-                <td>'. $row['user_id'] . '</td>
-				
-				
-    		</tr>';
-    		
-    	}
-    }
-    else
-    {
-    	// records now found 
-    	$data .= '<tr><td colspan="6">Records not found!</td></tr>';
-    }
-	
-    $data .= '</table>';
-	$data .= '<button class="btn btn-success" data-toggle="modal">INVOICE</button>';
-	$data .= '</form>';
-
-    echo $data;
-	
-	?>
+if(isset($_POST["submit"]))
+{
+echo'<a href="invoice.pdf">Download your Invoice</a>';
+}
+?>
+</div>
+</form>
 
 <!-- // Modal -->
           </div>
