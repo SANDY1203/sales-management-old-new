@@ -145,7 +145,7 @@
           </a>
           
         </li>
-		<li class="treeview">
+		<li class="active">
           <a href="company.php">
             <i class="fa fa-table"></i> <span>COMPANY</span>
             
@@ -256,26 +256,26 @@
                 </div>
 				
 				<div class="form-group">
-                    <label for="company_name">company_name</label>
-                    <input type="text" id="company_name" placeholder="company_name" class="form-control"/>
+                    <label for="company_name">Company Name</label>
+                    <input type="text" id="company_name" placeholder="Company Name" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="company_address">company_address</label>
-                    <input type="text" id="company_address" placeholder="company_address" class="form-control"/>
+                    <label for="company_address">Company Address</label>
+                    <input type="text" id="company_address" placeholder="Company Address" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="company_phone">company_phone</label>
-                    <input type="text" id="company_phone" placeholder="company_phone" class="form-control"/>
+                    <label for="company_phone">Company Phone</label>
+                    <input type="text" id="company_phone" placeholder="Company Phone" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="company_email">company_email</label>
-                    <input type="text" id="company_email" placeholder="company_email" class="form-control"/>
+                    <label for="company_email">Company Email</label>
+                    <input type="text" id="company_email" placeholder="Company Email" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="user_id">user_id</label>
-                    <input type="text" id="user_id" placeholder="user_id" class="form-control"/>
+                    <label for="user_id">User ID</label>
+                    <input type="text" id="user_id" placeholder="User ID" class="form-control"/>
                 </div>
 
             </div>
@@ -299,26 +299,26 @@
             <div class="modal-body">
 
                 <div class="form-group">
-                    <label for="company_name">company_name</label>
-                    <input type="text" id="update_company_name" placeholder="company_name" class="form-control"/>
+                    <label for="company_name">Company Name</label>
+                    <input type="text" id="update_company_name" placeholder="Company Name" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="company_address">company_address</label>
-                    <input type="text" id="update_company_address" placeholder="company_address" class="form-control"/>
+                    <label for="company_address">Company Address</label>
+                    <input type="text" id="update_company_address" placeholder="Company Address" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="company_phone">company_phone</label>
-                    <input type="text" id="update_company_phone" placeholder="company_phone" class="form-control"/>
+                    <label for="company_phone">Company Phone</label>
+                    <input type="text" id="update_company_phone" placeholder="Company Phone" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="company_email">company_email</label>
-                    <input type="text" id="update_company_email" placeholder="company_email" class="form-control"/>
+                    <label for="company_email">Company Email</label>
+                    <input type="text" id="update_company_email" placeholder="Company Email" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="user_id">user_id</label>
-                    <input type="text" id="update_user_id" placeholder="user_id" class="form-control"/>
+                    <label for="user_id">User Id</label>
+                    <input type="text" id="update_user_id" placeholder="User Id" class="form-control"/>
                 </div>
 
             </div>

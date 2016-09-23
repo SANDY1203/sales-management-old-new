@@ -166,7 +166,7 @@
           </a>
           
         </li>
-		<li class="treeview">
+		<li class="active">
           <a href="question.php">
             <i class="fa fa-table"></i> <span>QUESTION</span>
             
@@ -255,8 +255,8 @@
                     <input type="text" id="id26" placeholder="ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="question">question</label>
-                    <input type="text" id="question" placeholder="question" class="form-control"/>
+                    <label for="question">Question</label>
+                    <input type="text" id="question" placeholder="Question" class="form-control"/>
                 </div>
 				
 
@@ -282,8 +282,8 @@
 
                      
 				<div class="form-group">
-                    <label for="question">question</label>
-                    <input type="text" id="update_question" placeholder="question" class="form-control"/>
+                    <label for="question">Question</label>
+                    <input type="text" id="update_question" placeholder="Question" class="form-control"/>
                 </div>
 				
 

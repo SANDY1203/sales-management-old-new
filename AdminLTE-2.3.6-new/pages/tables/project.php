@@ -173,7 +173,7 @@
           </a>
           
         </li>
-		<li class="treeview">
+		<li class="active">
           <a href="project.php">
             <i class="fa fa-table"></i> <span>PROJECT</span>
             
@@ -257,30 +257,30 @@
                 </div>
 				
 				<div class="form-group">
-                    <label for="project_name">project_name</label>
-                    <input type="text" id="project_name" placeholder="project_name" class="form-control"/>
+                    <label for="project_name">Project Name</label>
+                    <input type="text" id="project_name" placeholder="Project Name" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="project_desc">project_desc</label>
-                    <input type="text" id="project_desc" placeholder="project_desc" class="form-control"/>
+                    <label for="project_desc">Project Desc</label>
+                    <input type="text" id="project_desc" placeholder="Project Desc" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_company_id">project_company_id</label>
-                    <input type="text" id="project_company_id" placeholder="project_company_id" class="form-control"/>
+                    <label for="project_company_id">Project Company ID</label>
+                    <input type="text" id="project_company_id" placeholder="Project Company ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_price">project_price</label>
-                    <input type="text" id="project_price" placeholder="project_price" class="form-control"/>
+                    <label for="project_price">Project Price</label>
+                    <input type="text" id="project_price" placeholder="Project Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_team">project_team</label>
-                    <input type="text" id="project_team" placeholder="project_team" class="form-control"/>
+                    <label for="project_team">Project Team</label>
+                    <input type="text" id="project_team" placeholder="Project Team" class="form-control"/>
                 </div>
 
                 
 				<div class="form-group">
-                    <label for="project_status">project_status</label>
+                    <label for="project_status">Project Status</label>
 					<select class="selectpicker" id="project_status">
   <option>lead</option>
   <option>opportunity</option>
@@ -301,8 +301,8 @@
                     </div>
 				
 				<div class="form-group">
-                    <label for="user_id">user_id</label>
-                    <input type="text" id="user_id3" placeholder="user_id" class="form-control"/>
+                    <label for="user_id">User ID</label>
+                    <input type="text" id="user_id3" placeholder="User ID" class="form-control"/>
                 </div>
 
             </div>
@@ -325,30 +325,30 @@
             </div>
             <div class="modal-body">
 			<div class="form-group">
-                    <label for="project_name">project_name</label>
-                    <input type="text" id="update_project_name" placeholder="project_name" class="form-control"/>
+                    <label for="project_name">Project Name</label>
+                    <input type="text" id="update_project_name" placeholder="Project Name" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="project_desc">project_desc</label>
-                    <input type="text" id="update_project_desc" placeholder="project_desc" class="form-control"/>
+                    <label for="project_desc">Project Desc</label>
+                    <input type="text" id="update_project_desc" placeholder="Project Desc" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_company_id">project_company_id</label>
-                    <input type="text" id="update_project_company_id" placeholder="project_company_id" class="form-control"/>
+                    <label for="project_company_id">Project Company ID</label>
+                    <input type="text" id="update_project_company_id" placeholder="Project Company ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_price">project_price</label>
-                    <input type="text" id="update_project_price" placeholder="project_price" class="form-control"/>
+                    <label for="project_price">Project Price</label>
+                    <input type="text" id="update_project_price" placeholder="Project Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_team">project_team</label>
-                    <input type="text" id="update_project_team" placeholder="project_team" class="form-control"/>
+                    <label for="project_team">Project Team</label>
+                    <input type="text" id="update_project_team" placeholder="Project Team" class="form-control"/>
                 </div>
 
                 
 				<div class="form-group">
-                    <label for="project_status">project_status</label>
+                    <label for="project_status">Project Status</label>
 					<select class="selectpicker" id="update_project_status">
   <option>lead</option>
   <option>opportunity</option>
@@ -370,8 +370,8 @@
 
                      
 				<div class="form-group">
-                    <label for="user_id">user_id</label>
-                    <input type="text" id="update_user_id2" placeholder="user_id" class="form-control"/>
+                    <label for="user_id">User ID</label>
+                    <input type="text" id="update_user_id2" placeholder="User ID" class="form-control"/>
                 </div>
 				
 
