@@ -93,7 +93,7 @@
                 </div>
                 <div class="pull-right">
 
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  
             <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
 
                 </div>
@@ -173,8 +173,14 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-			<button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal5">Add New Record</button>
-
+			<div id="dom-target123" style="display: none;">
+    <?php 
+        if($_GET){
+        $user_id = $_GET['user_id'];}//Again, do some operation, get the output.
+         /* You have to escape because the result
+                                           will not be valid HTML otherwise. */
+    ?>
+</div>
 			  <div class="col-md-9">
 			                <h1 class="box-title"><b>PROJECT</b></h1>
 			  
@@ -183,7 +189,87 @@
 			
             <!-- /.box-header -->
             <div class="box-body">
-              <div class="records_content5"></div>
+              <?php
+	// include Database connection file 
+	include("ajax/db_connection.php");
+	 if($_GET){
+        $user_id = $_GET['user_id'];
+
+		
+		
+		 // print_r($_GET);       
+    }
+	
+	$query = mysql_query("SELECT * FROM company WHERE user_id = '$user_id'");
+	WHILE ($rows = mysql_fetch_array($query)):
+  
+	  $user_id = $rows['user_id'];
+      $company_id = $rows['company_id'];
+	  $company_name = $rows['company_name']; // print_r($_GET);       
+	  $company_address = $rows['company_address'];
+	  $company_phone = $rows['company_phone'];
+	  $company_email = $rows['company_email'];
+	  $user_id = $rows['user_id'];
+	  endwhile;
+	  
+	$data ='<p align="center"><strong>WELCOME &nbsp; '. $company_name . '</strong></p>
+	<p align="right"><strong>NAME:'. $company_name . '</strong></p>
+	<p align="right"><strong>ADDRESS:'. $company_address . '</strong></p>
+	<p align="right"><strong>PH NO:'. $company_phone . '</strong></p>
+    <p align="right"><strong>EMAIL:'. $company_email . '</strong>';
+	
+
+	// Design initial table header 
+	$data .= '<table class="table table-bordered table-striped">
+						<tr>
+							<th>id</th>
+					  <th>project_name</th>
+                      <th>project_desc</th>
+                      <th>project_company_id</th>
+					  <th>project_price</th>
+					  <th>project_team</th>
+					  <th>project_status</th>
+					  <th>user_id</th>
+							
+						</tr>';
+
+	$query = "SELECT * FROM projects WHERE project_company_id = '$company_id' ";
+
+	if (!$result = mysql_query($query)) {
+        exit(mysql_error());
+    }
+
+    // if query results contains rows then featch those rows 
+    if(mysql_num_rows($result) > 0)
+    {
+    	$number = 1;
+    	while($row = mysql_fetch_assoc($result))
+    	{
+    		$data .= '<tr>
+				<td>'. $row['id'] . '</td>
+			     <td>'. $row['project_name'] . '</td>
+				 <td>'. $row['project_desc'] . '</td>
+				 <td>'. $row['project_company_id'] . '</td>
+				 <td>'. $row['project_price'] . '</td>
+				 <td>'. $row['project_team'] . '</td>
+				 <td>'. $row['project_status'] . '</td>
+                <td>'. $row['user_id'] . '</td>
+				
+				
+    		</tr>';
+    		
+    	}
+    }
+    else
+    {
+    	// records now found 
+    	$data .= '<tr><td colspan="6">Records not found!</td></tr>';
+    }
+
+    $data .= '</table>';
+
+    echo $data;
+?>
             </div>
             <!-- /.box-body -->
 			<!-- Modal - Add New Record/User -->

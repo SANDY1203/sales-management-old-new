@@ -1,3 +1,8 @@
+<?php 
+        if($_GET){
+        $user_id = $_GET['user_id'];}
+		?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,11 +47,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-<<<<<<< HEAD
-    <a href="index.html" class="logo">
-=======
     <a href="index.php" class="logo">
->>>>>>> origin/combine
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -135,7 +136,7 @@
         </li>
 		
 		<li class="treeview">
-          <a href="pages/tables/project.php">
+          <a href="pages/tables/project.php?user_id=<?php echo $user_id ?>">
             <i class="fa fa-table"></i> <span>PROJECT</span>
             
           </a>

@@ -124,46 +124,49 @@ $pdf->SetFont('Times','',12);
 $pdf->SetTextColor(32);
 $pdf->Cell(0,35,'',0,1,'L');
 $pdf->Cell(5,7,'',0,0,'L');
-$pdf->Cell(90,7,'INVOICE TO',1,0,'C');
-$pdf->Cell(45,7,'Invoice Number: ',1,0,'L');
-$pdf->Cell(45,7,'Price',1,1,'R');
+$pdf->Cell(90,7,'INVOICE TO',0,0,'C');
+$pdf->Cell(45,7,'Invoice Number: ',0,0,'L');
+$pdf->Cell(45,7,'145',0,1,'R');
 $pdf->Cell(5,7,'',0,0,'L');
-$pdf->Cell(90,7,$company,1,0,'C',0);
-$pdf->Cell(45,7,'Invoice Date: ',1,0,'L',0);
-$pdf->Cell(45,7,$price,1,1,'R',0);
+$pdf->Cell(90,7,'HP',0,0,'C',0);
+$pdf->Cell(45,7,'Invoice Date: ',0,0,'L',0);
+$pdf->Cell(45,7,date('d-m-Y'),0,1,'R',0);
 $pdf->Cell(5,7,'',0,0,'L');
-$pdf->Cell(90,7,$address,1,0,'C',0);
-$pdf->Cell(45,7,'PO No.',1,0,'L',0);
-$pdf->Cell(45,7,$price,1,1,'R',0);
+$pdf->Cell(90,7,'BANGALORE',0,0,'C',0);
+$pdf->Cell(45,7,'PO No.',0,0,'L',0);
+$pdf->Cell(45,7,'789456258',0,1,'R',0);
 $pdf->Cell(0,0,'',0,1,'R');
 $pdf->Cell(5,7,'',0,0,'L');
-$pdf->Cell(90,7,$email,1,0,'C',0);
-$pdf->Cell(90,7,'TOTAL AMOUNT',1,1,'C',0);
+$pdf->Cell(90,7,'info@hp.com',0,0,'C',0);
+$pdf->Cell(90,7,'TOTAL AMOUNT',0,1,'C',0);
 $pdf->Cell(5,7,'',0,0,'L');
-$pdf->Cell(90,7,$telephone,1,0,'C',0);
-$pdf->Cell(90,7,'KES ',1,0,'C',0);
+$pdf->Cell(90,7,'+919852147632',0,0,'C',0);
+$pdf->Cell(90,7,'KES 2400',0,0,'C',0);
 $pdf->Cell(0,20,'',0,1,'R');
 $pdf->Cell(5,7,'',0,0,'L');
-$pdf->Cell(110,12,'Iteam Description',1,0,'C');
-$pdf->Cell(30,12,'Unit Price ',1,0,'C');
-$pdf->Cell(10,12,'Qty ',1,0,'C');
-$pdf->Cell(30,12,'Total',1,1,'C');
+$pdf->SetFillColor(200,200,200);
+$pdf->Cell(110,12,'Iteam Description','B',0,'C',1);
+$pdf->Cell(30,12,'Unit Price ','B',0,'C',1);
+$pdf->Cell(10,12,'Qty ','B',0,'C',1);
+$pdf->Cell(30,12,'Total','B',1,'C',1);
+
+$pdf->SetFillColor(225,225,225);
 
 
-for ($t = 0; $t <= 5; $t++) {
+for ($t = 0; $t <= 1; $t++) {
     
  
 $pdf->Cell(5,7,'',0,0,'L');
 $y1 = $pdf->GetY();
 $x1 = $pdf->GetX();
 $width = 110;
-$pdf->MultiCell(110,7,'Iteam Description',1,'C');
+$pdf->MultiCell(110,7,'SOME PROJECTS',0,'C',1);
 $y = $pdf->GetY();
 $x = $pdf->GetX();
 $pdf->SetXY($x1 + $width, $y1);
-$pdf->Cell(30,7,'Unit Price ',1,0,'C');
-$pdf->Cell(10,7,'Qty ',1,0,'C');
-$pdf->Cell(30,7,'Total',1,1,'C');
+$pdf->Cell(30,7,'1000',0,0,'C',1);
+$pdf->Cell(10,7,'1',0,0,'C',1);
+$pdf->Cell(30,7,'1000',0,1,'C',1);
 $pdf->SetXY($x, $y);
 
 }
@@ -184,14 +187,14 @@ $pdf->SetTextColor(255,255,255);
 $pdf->Cell(45,7,'Pin No.',1,0,'C',1);
 $pdf->Cell(45,7,'POS15934601',1,0,'C',1);
 $pdf->Cell(45,7,'Subtotal',1,0,'C',1);
-$pdf->Cell(45,7,'KES',1,1,'C',1);
+$pdf->Cell(45,7,'KES 2000',1,1,'C',1);
 $pdf->SetFillColor(255,255,255);
 $pdf->Cell(5,7,'',0,0,'L');
 $pdf->SetFillColor(0,0,0);
 $pdf->Cell(45,7,'Served By:',1,0,'C',1);
 $pdf->Cell(45,7,'Bhavya barot',1,0,'C',1);
-$pdf->Cell(45,7,'TAX: VAT 16%',1,0,'C',1);
-$pdf->Cell(45,7,'KES',1,1,'C',1);
+$pdf->Cell(45,7,'TAX: VAT 20%',1,0,'C',1);
+$pdf->Cell(45,7,'KES 400',1,1,'C',1);
 
 $pdf->Cell(0,2,'',0,1,'R');
 $pdf->SetFillColor(255,255,255);
@@ -202,7 +205,7 @@ $pdf->Cell(45,7,'Mobile:',1,0,'C',1);
 $pdf->Cell(45,7,'07894561235',1,0,'C',1);
 $pdf->SetFont('Times','',15);
 $pdf->Cell(45,7,'GRAND TOTAL',1,0,'C',1);
-$pdf->Cell(45,7,'KES',1,1,'C',1);
+$pdf->Cell(45,7,'KES 2400',1,1,'C',1);
 $pdf->SetFillColor(255,255,255);
 $pdf->Cell(5,7,'',0,0,'L');
 $pdf->SetFillColor(0,0,0);
@@ -561,10 +564,7 @@ margin-top:10px;
           <div class="box">
             <div class="box-header">
 			
-			  <div class="col-md-9">
-			                <h1 class="box-title"><b>PROJECT</b></h1>
-			  
-            </div>
+			 
             </div>
 			
             <!-- /.box-header -->
