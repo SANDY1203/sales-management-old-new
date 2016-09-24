@@ -1,10 +1,54 @@
 <?php 
 if(isset($_POST["submit"]))
 {
-$company = $_POST["company"];
-$address = $_POST["address"];
-$email = $_POST["email"];
-$telephone = $_POST["telephone"];
+include("ajax/db_connection.php");
+
+$number = 1;
+$total = 0;
+$project_price1=0;
+$project_price2=0;
+$project_price3=0;
+$project_price4=0;
+$project_price5=0;
+$project_price6=0;
+
+    foreach($_POST['checkboxName'] as $value)
+{
+    
+	
+	$query = mysql_query("SELECT * FROM projects WHERE id = '$value'");
+	WHILE ($rows = mysql_fetch_array($query)):
+	  ${"project_name$number"} = $rows['project_name'];
+      ${"project_desc$number"} = $rows['project_desc'];
+	  ${"project_company_id$number"} = $rows['project_company_id']; // print_r($_GET);       
+	  ${"project_price$number"} = $rows['project_price'];
+	  ${"project_status$number"} = $rows['project_status'];
+	  
+	  
+
+	  
+	  
+	
+	endwhile;
+	$query1 = mysql_query("SELECT * FROM company WHERE company_id = '${"project_company_id$number"}'");
+	WHILE ($rows = mysql_fetch_array($query1)):
+	  ${"company_id$number"} = $rows['company_id'];
+      ${"company_name$number"} = $rows['company_name'];
+	  ${"company_address$number"} = $rows['company_address']; // print_r($_GET);       
+	  ${"company_phone$number"} = $rows['company_phone'];
+	  ${"company_email$number"} = $rows['company_email'];
+	  
+	  
+	
+
+	  
+	  $total = $total + ${"project_price$number"};
+	  
+	$number++;
+	endwhile;
+	
+}
+/*
 $number = $_POST["number"];
 $item = $_POST["item"];
 $price = $_POST["price"];
@@ -61,7 +105,7 @@ $total = 0;
 	endwhile;
 	
 }
-*/
+
 
 function r($r)
 {
@@ -71,7 +115,12 @@ $r = $r." $";
 return $r;
 }
 $price = r($price);
-$vat = r($vat);
+$vat = r($vat); */
+//$address = $_POST["address"];
+$maintotal = $_POST["maintotal"];
+$grandtotal = $_POST["grandtotal"];
+$grandtax = $_POST["grandtax"];
+
 require('../../../../fpdf181/fpdf.php');
 
 class PDF extends FPDF
@@ -79,15 +128,12 @@ class PDF extends FPDF
 
 function Header()
 {
-if(!empty($_FILES["file"]))
-  {
-$uploaddir = "logo/";
-$nm = $_FILES["file"]["name"];
-$random = rand(1,99);
-move_uploaded_file($_FILES["file"]["tmp_name"], $uploaddir.$random.$nm);
-$this->Image($uploaddir.$random.$nm,15,20,180);
-unlink($uploaddir.$random.$nm);
-}
+
+
+
+$this->Image('logo.png',15,20,220);
+
+
 $margin = 10;
 $pageWidth = 210;
 $pageHeight = 297;
@@ -128,20 +174,20 @@ $pdf->Cell(90,7,'INVOICE TO',0,0,'C');
 $pdf->Cell(45,7,'Invoice Number: ',0,0,'L');
 $pdf->Cell(45,7,'145',0,1,'R');
 $pdf->Cell(5,7,'',0,0,'L');
-$pdf->Cell(90,7,'HP',0,0,'C',0);
+$pdf->Cell(90,7,"${"company_name1"}",0,0,'C',0);
 $pdf->Cell(45,7,'Invoice Date: ',0,0,'L',0);
 $pdf->Cell(45,7,date('d-m-Y'),0,1,'R',0);
 $pdf->Cell(5,7,'',0,0,'L');
-$pdf->Cell(90,7,'BANGALORE',0,0,'C',0);
+$pdf->Cell(90,7,"$company_address1",0,0,'C',0);
 $pdf->Cell(45,7,'PO No.',0,0,'L',0);
 $pdf->Cell(45,7,'789456258',0,1,'R',0);
 $pdf->Cell(0,0,'',0,1,'R');
 $pdf->Cell(5,7,'',0,0,'L');
-$pdf->Cell(90,7,'info@hp.com',0,0,'C',0);
+$pdf->Cell(90,7,"${"company_email1"}",0,0,'C',0);
 $pdf->Cell(90,7,'TOTAL AMOUNT',0,1,'C',0);
 $pdf->Cell(5,7,'',0,0,'L');
-$pdf->Cell(90,7,'+919852147632',0,0,'C',0);
-$pdf->Cell(90,7,'KES 2400',0,0,'C',0);
+$pdf->Cell(90,7,"${"company_phone1"}",0,0,'C',0);
+$pdf->Cell(90,7,"$maintotal",0,0,'C',0);
 $pdf->Cell(0,20,'',0,1,'R');
 $pdf->Cell(5,7,'',0,0,'L');
 $pdf->SetFillColor(200,200,200);
@@ -153,20 +199,23 @@ $pdf->Cell(30,12,'Total','B',1,'C',1);
 $pdf->SetFillColor(225,225,225);
 
 
-for ($t = 0; $t <= 1; $t++) {
+for ($t = 1; $t < $number; $t++) {
+	
     
+ ${"total$t"} = $_POST["total$t"];
+ ${"quantity$t"} = $_POST["quantity$t"];
  
 $pdf->Cell(5,7,'',0,0,'L');
 $y1 = $pdf->GetY();
 $x1 = $pdf->GetX();
 $width = 110;
-$pdf->MultiCell(110,7,'SOME PROJECTS',0,'C',1);
+$pdf->MultiCell(110,7,"${"project_name$t"}",0,'C',1);
 $y = $pdf->GetY();
 $x = $pdf->GetX();
 $pdf->SetXY($x1 + $width, $y1);
-$pdf->Cell(30,7,'1000',0,0,'C',1);
-$pdf->Cell(10,7,'1',0,0,'C',1);
-$pdf->Cell(30,7,'1000',0,1,'C',1);
+$pdf->Cell(30,7,"${"project_price$t"}",0,0,'C',1);
+$pdf->Cell(10,7,"${"quantity$t"}",0,0,'C',1);
+$pdf->Cell(30,7,"${"total$t"}",0,1,'C',1);
 $pdf->SetXY($x, $y);
 
 }
@@ -187,14 +236,14 @@ $pdf->SetTextColor(255,255,255);
 $pdf->Cell(45,7,'Pin No.',1,0,'C',1);
 $pdf->Cell(45,7,'POS15934601',1,0,'C',1);
 $pdf->Cell(45,7,'Subtotal',1,0,'C',1);
-$pdf->Cell(45,7,'KES 2000',1,1,'C',1);
+$pdf->Cell(45,7,"$grandtotal",1,1,'C',1);
 $pdf->SetFillColor(255,255,255);
 $pdf->Cell(5,7,'',0,0,'L');
 $pdf->SetFillColor(0,0,0);
 $pdf->Cell(45,7,'Served By:',1,0,'C',1);
 $pdf->Cell(45,7,'Bhavya barot',1,0,'C',1);
-$pdf->Cell(45,7,'TAX: VAT 20%',1,0,'C',1);
-$pdf->Cell(45,7,'KES 400',1,1,'C',1);
+$pdf->Cell(45,7,'TAX: VAT 16%',1,0,'C',1);
+$pdf->Cell(45,7,"$grandtax",1,1,'C',1);
 
 $pdf->Cell(0,2,'',0,1,'R');
 $pdf->SetFillColor(255,255,255);
@@ -205,7 +254,7 @@ $pdf->Cell(45,7,'Mobile:',1,0,'C',1);
 $pdf->Cell(45,7,'07894561235',1,0,'C',1);
 $pdf->SetFont('Times','',15);
 $pdf->Cell(45,7,'GRAND TOTAL',1,0,'C',1);
-$pdf->Cell(45,7,'KES 2400',1,1,'C',1);
+$pdf->Cell(45,7,"$maintotal",1,1,'C',1);
 $pdf->SetFillColor(255,255,255);
 $pdf->Cell(5,7,'',0,0,'L');
 $pdf->SetFillColor(0,0,0);
@@ -555,47 +604,201 @@ margin-top:10px;
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-   
+ <?php  
+include("ajax/db_connection.php");
 
+$number = 1;
+$total = 0;
+$project_price1=0;
+$project_price2=0;
+$project_price3=0;
+$project_price4=0;
+$project_price5=0;
+$project_price6=0;
+
+    foreach($_POST['checkboxName'] as $value)
+{
+    
+	
+	$query = mysql_query("SELECT * FROM projects WHERE id = '$value'");
+	WHILE ($rows = mysql_fetch_array($query)):
+	  ${"project_name$number"} = $rows['project_name'];
+      ${"project_desc$number"} = $rows['project_desc'];
+	  ${"project_company_id$number"} = $rows['project_company_id']; // print_r($_GET);       
+	  ${"project_price$number"} = $rows['project_price'];
+	  ${"project_status$number"} = $rows['project_status'];
+	  
+	  
+
+	  
+	  
+	
+	endwhile;
+	$query1 = mysql_query("SELECT * FROM company WHERE company_id = '${"project_company_id$number"}'");
+	WHILE ($rows = mysql_fetch_array($query1)):
+	  ${"company_id$number"} = $rows['company_id'];
+      ${"company_name$number"} = $rows['company_name'];
+	  ${"company_address$number"} = $rows['company_address']; // print_r($_GET);       
+	  ${"company_phone$number"} = $rows['company_phone'];
+	  ${"company_email$number"} = $rows['company_email'];
+	  
+	  
+	
+
+	  
+	  $total = $total + ${"project_price$number"};
+	  
+	$number++;
+	endwhile;
+	
+} ?>
     <!-- Main content -->
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
-          <div class="box">
-            <div class="box-header">
-			
-			 
-            </div>
-			
-            <!-- /.box-header -->
-            <div class="box-body">
-              
-            
-            <!-- /.box-body -->
-			<!-- Modal - Add New Record/User -->
+          
 
-<div id="content">
-<div id="title" align="center">Create a PDF invoice with PHP</div>
-<div id="body">
 <form action="" method="post" enctype="multipart/form-data">
-<div id="body_l">
-<div id="name"><input name="company" placeholder="Insert here your Company Name" type="text" /></div>
-<div id="name"><input name="address" placeholder="Insert here your Company Address" type="text" /></div>
-<div id="name"><input name="email" placeholder="Insert here your Email" type="text" /></div>
-<div id="name"><input name="telephone" placeholder="Insert here your telephone number" type="text" /></div>
-<div id="name"><input name="number" placeholder="Invoice number" type="text" /></div>
-<div id="name"><input name="item" placeholder="Item" type="text" /></div>
-</div>
-<div id="body_r">
-<div id="name"><input name="price" placeholder="Insert here price" type="text" /></div>
-<div id="name"><input name="vat" placeholder="Insert here your VAT" type="text" /></div>
-<div id="name"><input name="bank" placeholder="Insert the name of your Bank" type="text" /></div>
-<div id="name"><input name="iban" placeholder="Insert here your IBAN number" type="text" /></div>
-<div id="name"><input name="paypal" placeholder="Insert here your PayPal address" type="text" /></div>
-<div id="name"><input name="com" placeholder="Add a comment" type="text" /></div>
-</div>
-<div id="up" align="center"><input name="file" type="file" /></div>
-<div id="up" align="center"><input name="submit" style="margin-top:60px;" value="Create your Invoice" type="submit" /><br /><br />
+<section class="invoice">
+      <!-- title row -->
+	  
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="page-header">
+            <i class="fa fa-globe"></i> Biocard Elite LLC
+            <small class="pull-right">Date: <?php echo date('d-m-Y'); ?></small>
+          </h2>
+        </div>
+        <!-- /.col -->
+      </div>
+	  
+
+      <!-- info row -->
+      <div class="row invoice-info">
+        <div class="col-sm-4 invoice-col">
+          From
+          <address>
+            <strong>Biocard Elite LLC</strong><br>
+            Hatheru Road Off.<br>
+            Gitanga Road,Lavington, Kenya<br>
+            Phone: +254 714 772 176<br>
+            Email: info@biocard.io
+          </address>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-4 invoice-col">
+          To
+          <address>
+            <strong><?php echo ${"company_name1"}; ?></strong><br>
+            <?php echo ${"company_address1"}; ?><br>
+             <?php echo ${"company_phone1"}; ?><br>
+           <?php echo ${"company_email1"}; ?>
+          </address>
+        </div>
+        <!-- /.col -->
+        <div class="col-sm-4 invoice-col">
+          <b>Invoice #007612</b><br>
+          <br>
+
+           </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <!-- Table row -->
+      <div class="row">
+        <div class="col-xs-12 table-responsive">
+		
+		
+		<table class="table table-striped">
+	<tbody>
+		<thead>
+            <tr>
+			<td align="center" style="width:20px"> <strong>#</strong></td>
+			<td align="center" style="width:480px"><strong>Item Description</strong></td>
+			<td align="center" style="width:120px"> <strong>Unite Prise</strong></td>
+			<td align="center" style="width:20px"> <strong>Qty</strong></td>
+			<td align="center" style="width:120px"><strong>Total</strong></td>
+		</tr>
+		</thead>
+		<?php
+		
+		$data = "";
+		for ($x = 1; $x < $number; $x++){
+		
+		$data .='<tr>
+			
+				<td align="center">'. $x . '</td>
+				<td align="center">'. ${"project_name$x"} . '</td>
+			     <td align="center"><input style="width:70px;" type="text" id="price'. $x . '"  name="price'. $x . '" readonly value="'. ${"project_price$x"} .'" class="readonly"/></td>
+				 <td align="center"><input style="width:70px;" type="text" id="quantity'. $x . '" name="quantity'. $x . '" value="1"/></td></td>
+				 <td align="center"><input style="width:70px;" type="text" id="total'. $x . '" name="total'. $x . '" readonly value="'. ${"project_price$x"} . '" class="readonly"/></td>
+				 
+				
+				
+    		</tr>';
+			
+		}
+		echo $data;
+		
+		?>
+	</tbody>
+</table>
+
+          </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <div class="row">
+        <!-- accepted payments column -->
+        <div class="col-xs-6">
+          
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-6">
+          
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th style="width:50%">Subtotal:</th>
+                <td><input style="width:70px;" type="text" id="grandtotal" name="grandtotal" class="readonly" readonly value="<?php echo ${"project_price1"} +${"project_price2"} +${"project_price3"} +${"project_price4"} +${"project_price5"} + ${"project_price6"}; ?>"></td>
+              </tr>
+              <tr>
+                <th>Tax (16%)</th>
+                <td><input style="width:70px;" type="text" id="grandtax" name="grandtax" class="readonly" readonly value="<?php echo ${"project_price1"}*0.16 +${"project_price2"}*0.16 +${"project_price3"}*0.16 +${"project_price4"}*0.16 +${"project_price5"}*0.16 + ${"project_price6"}*0.16; ?>"></td>
+              </td>
+              </tr>
+                <tr>
+                <th>Total:</th>
+                <td><input style="width:70px;" type="text" id="maintotal" name="maintotal" class="readonly" readonly value="<?php $maintotal1 = ${"project_price1"} +${"project_price2"} +${"project_price3"} +${"project_price4"} +${"project_price5"} + ${"project_price6"}; echo $maintotal1 + $maintotal1 * .16;?>"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <!-- this row will not appear when printing -->
+      <div class="row no-print">
+        <div class="col-xs-12">
+          <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+          <button type="button" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment
+          </button>
+          
+		  
+		  
+		  
+		  
+		  <?php foreach($_POST['checkboxName'] as $value)
+{
+  echo '<input type="hidden" name="checkboxName[]" value="'. $value. '">';
+}
+	?>
+	
+	
+<div><input name="submit" value="Create your Invoice" type="submit" /><br /><br />
 
 <?php 
 if(isset($_POST["submit"]))
@@ -605,11 +808,11 @@ echo'<a href="invoice.pdf">Download your Invoice</a>';
 ?>
 </div>
 </form>
-
-<!-- // Modal -->
-          </div>
-          <!-- /.box -->
-</div>
+        </div>
+      </div>
+    
+	
+</section>
           
           <!-- /.box -->
         </div>
@@ -650,7 +853,118 @@ echo'<a href="invoice.pdf">Download your Invoice</a>';
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <!-- page script -->
+
 <script>
+
+$('#quantity1').on('keyup',function(){
+	var just = $('#total1').val();
+	var grandtot = ($('#grandtotal').val() - just);
+    var tot = $('#price1').val() * this.value;
+    $('#total1').val(tot);
+	grandtot = (grandtot + tot);
+	
+	var tottax = grandtot * 0.16;
+	
+	var maintot = grandtot + tottax;
+	$('#grandtotal').val(grandtot);
+	$('#grandtax').val(tottax);
+	$('#maintotal').val(maintot);
+});
+</script>
+<script>
+
+$('#quantity5').on('keyup',function(){
+    var just = $('#total5').val();
+	var grandtot = ($('#grandtotal').val() - just);
+    var tot = $('#price5').val() * this.value;
+    $('#total5').val(tot);
+	grandtot = (grandtot + tot);
+	
+	var tottax = grandtot * 0.16;
+	
+	var maintot = grandtot + tottax;
+	$('#grandtotal').val(grandtot);
+	$('#grandtax').val(tottax);
+	$('#maintotal').val(maintot);
+});
+</script>
+<script>
+
+$('#quantity6').on('keyup',function(){
+    var just = $('#total6').val();
+	var grandtot = ($('#grandtotal').val() - just);
+    var tot = $('#price6').val() * this.value;
+    $('#total6').val(tot);
+	grandtot = (grandtot + tot);
+	
+	var tottax = grandtot * 0.16;
+	
+	var maintot = grandtot + tottax;
+	$('#grandtotal').val(grandtot);
+	$('#grandtax').val(tottax);
+	$('#maintotal').val(maintot);
+});
+</script>
+<script>
+
+$('#quantity4').on('keyup',function(){
+	
+    var just = $('#total4').val();
+	var grandtot = ($('#grandtotal').val() - just);
+    var tot = $('#price4').val() * this.value;
+    $('#total4').val(tot);
+	grandtot = (grandtot + tot);
+	
+	var tottax = grandtot * 0.16;
+	
+	var maintot = grandtot + tottax;
+	$('#grandtotal').val(grandtot);
+	$('#grandtax').val(tottax);
+	$('#maintotal').val(maintot);
+});
+</script>
+
+<script>
+
+$('#quantity2').on('keyup',function(){
+	
+	var just = $('#total2').val();
+	var grandtot = ($('#grandtotal').val() - just);
+    var tot = $('#price2').val() * this.value;
+    $('#total2').val(tot);
+	
+	grandtot = (grandtot + tot);
+	
+	var tottax = grandtot * 0.16;
+	
+	var maintot = grandtot + tottax;
+	$('#grandtotal').val(grandtot);
+	$('#grandtax').val(tottax);
+	$('#maintotal').val(maintot);
+});
+</script>
+<script>
+
+$('#quantity3').on('keyup',function(){
+    var just = $('#total3').val();
+	var grandtot = ($('#grandtotal').val() - just);
+    var tot = $('#price3').val() * this.value;
+    $('#total3').val(tot);
+	grandtot = (grandtot + tot);
+	
+	var tottax = grandtot * 0.16;
+	
+	var maintot = grandtot + tottax;
+	$('#grandtotal').val(grandtot);
+	$('#grandtax').val(tottax);
+	$('#maintotal').val(maintot);
+});
+
+</script>
+
+
+<script>
+
   $(function () {
     $("#example1").DataTable();
     $('#example2').DataTable({

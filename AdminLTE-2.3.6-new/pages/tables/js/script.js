@@ -719,6 +719,8 @@ function readRecordsProject() {
 }
 
 
+
+
 function DeleteProject(id) {
     var conf = confirm("Are you sure, do you really want to delete Project?");
     if (conf == true) {

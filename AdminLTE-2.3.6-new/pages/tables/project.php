@@ -227,6 +227,8 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
+			<button class="btn btn-success" data-toggle="modal" onclick="location.href='invoice.php'">INVOICE</button>
+				<button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal5">QUOTATION</button>
 			<button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal5">Add New Record</button>
 
 			  <div class="col-md-9">
