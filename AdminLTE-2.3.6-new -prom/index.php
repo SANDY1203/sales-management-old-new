@@ -42,11 +42,11 @@
 
   <header class="main-header">
     <!-- Logo -->
-<<<<<<< HEAD
-    <a href="index.html" class="logo">
-=======
+
+  
+
     <a href="index.php" class="logo">
->>>>>>> origin/combine
+
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -121,125 +121,33 @@
               </span>
         </div>
       </form>
-      <!-- /.search form -->
+       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
 	          
-<<<<<<< HEAD
-        <li class="treeview">
-=======
-        <li class="active treeview">
-<<<<<<< HEAD
-          <a href="index.html">
-=======
->>>>>>> origin/combine
+        <li>
+		<li class="active">
           <a href="index.php">
->>>>>>> origin/combine
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             
           </a>
           
         </li>
-<<<<<<< HEAD
+
 		<li class="treeview">
-=======
-		<li class="active treeview">
-<<<<<<< HEAD
-          <a href="pages/tables/user.php">
-            <i class="fa fa-table"></i> <span>USERS</span>
-=======
->>>>>>> origin/combine
-          <a href="pages/tables/project.php">
-            <i class="fa fa-table"></i> <span>PROJECT</span>
->>>>>>> origin/combine
-            
-          </a>
-          
-        </li>
-<<<<<<< HEAD
-		<li class="treeview">
-=======
-		<li class="active treeview">
-<<<<<<< HEAD
-          <a href="pages/tables/company.php">
-            <i class="fa fa-table"></i> <span>COMPANY</span>
-=======
->>>>>>> origin/combine
-          <a href="pages/tables/team.php">
-            <i class="fa fa-table"></i> <span>TEAM</span>
->>>>>>> origin/combine
-            
-          </a>
-          
-        </li>
-<<<<<<< HEAD
-		<li class="treeview">
-=======
-		<li class="active treeview">
-<<<<<<< HEAD
-          <a href="pages/tables/contact.php">
-            <i class="fa fa-table"></i> <span>CONTACT</span>
-=======
->>>>>>> origin/combine
-          <a href="pages/tables/team_member.php">
-            <i class="fa fa-table"></i> <span>TEAM MEMBERS</span>
->>>>>>> origin/combine
-            
-          </a>
-          
-        </li>
-<<<<<<< HEAD
-		<li class="active treeview">
-          <a href="pages/tables/feedback.php">
-            <i class="fa fa-table"></i> <span>FEEDBACK</span>
-            
-          </a>
-          
-        </li>
-		<li class="active treeview">
-          <a href="pages/tables/question.php">
-            <i class="fa fa-table"></i> <span>QUESTION</span>
-            
-          </a>
-          
-        </li>
-		<li class="active treeview">
-          <a href="pages/tables/project.php">
-            <i class="fa fa-table"></i> <span>PROJECT</span>
-            
-          </a>
-          
-        </li>
-		<li class="active treeview">
-          <a href="pages/tables/proserv.php">
-            <i class="fa fa-table"></i> <span>PROSERV</span>
-            
-          </a>
-          
-        </li>
-		<li class="active treeview">
-          <a href="pages/tables/proserv_project.php">
-            <i class="fa fa-table"></i> <span>PROSERV PROJECT</span>
-            
-          </a>
-          
-        </li>
-		<li class="active treeview">
           <a href="pages/tables/team.php">
             <i class="fa fa-table"></i> <span>TEAM</span>
             
           </a>
           
         </li>
-		<li class="active treeview">
+		<li class="treeview">
           <a href="pages/tables/team_member.php">
             <i class="fa fa-table"></i> <span>TEAM MEMBERS</span>
             
           </a>
           
         </li>
-=======
->>>>>>> origin/combine
 		
         
         

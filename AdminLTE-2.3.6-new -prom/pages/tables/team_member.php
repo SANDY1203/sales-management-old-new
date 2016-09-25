@@ -92,11 +92,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-<<<<<<< HEAD
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-=======
                  <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
->>>>>>> origin/combine
                 </div>
               </li>
             </ul>
@@ -142,76 +138,15 @@
           </a>
           
         </li>
+
 		<li class="treeview">
-<<<<<<< HEAD
-          <a href="user.php">
-            <i class="fa fa-table"></i> <span>USERS</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-          <a href="company.php">
-            <i class="fa fa-table"></i> <span>COMPANY</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-          <a href="contact.php">
-            <i class="fa fa-table"></i> <span>CONTACT</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-          <a href="feedback.php">
-            <i class="fa fa-table"></i> <span>FEEDBACK</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-          <a href="question.php">
-            <i class="fa fa-table"></i> <span>QUESTION</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-=======
->>>>>>> origin/combine
-          <a href="project.php">
-            <i class="fa fa-table"></i> <span>PROJECT</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-<<<<<<< HEAD
-          <a href="proserv.php">
-            <i class="fa fa-table"></i> <span>PROSERV</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-          <a href="proserv_project.php">
-            <i class="fa fa-table"></i> <span>PROSERV PROJECT</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-=======
->>>>>>> origin/combine
           <a href="team.php">
             <i class="fa fa-table"></i> <span>TEAM</span>
             
           </a>
           
         </li>
-		<li class="treeview">
+		<li class="active">
           <a href="team_member.php">
             <i class="fa fa-table"></i> <span>TEAM MEMBERS</span>
             
@@ -269,26 +204,26 @@
                 </div>
 				
 				<div class="form-group">
-                    <label for="team_m_first_name">team_m_first_name</label>
-                    <input type="text" id="team_m_first_name" placeholder="team_m_first_name" class="form-control"/>
+                    <label for="team_m_first_name">Team M First Name</label>
+                    <input type="text" id="team_m_first_name" placeholder="Team M First Name" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="team_m_last_name">team_m_last_name</label>
-                    <input type="text" id="team_m_last_name" placeholder="team_m_last_name" class="form-control"/>
+                    <label for="team_m_last_name">Team M Last Name</label>
+                    <input type="text" id="team_m_last_name" placeholder="Team M Last Name" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="team_m_position">team_m_position</label>
-                    <input type="text" id="team_m_position" placeholder="team_m_position" class="form-control"/>
+                    <label for="team_m_position">Team M Position</label>
+                    <input type="text" id="team_m_position" placeholder="Team M Position" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="team_m_employement_status">team_m_employement_status</label>
-                    <input type="text" id="team_m_employement_status" placeholder="team_m_employement_status" class="form-control"/>
+                    <label for="team_m_employement_status">Team M Position Employement Status</label>
+                    <input type="text" id="team_m_employement_status" placeholder="Team M Position Employement Status" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="team_id">team_id</label>
-                    <input type="text" id="team_id" placeholder="team_id" class="form-control"/>
+                    <label for="team_id">Team ID</label>
+                    <input type="text" id="team_id" placeholder="Team ID" class="form-control"/>
                 </div>
 
             </div>
@@ -312,26 +247,26 @@
             <div class="modal-body">
 
                 <div class="form-group">
-                    <label for="team_m_first_name">team_m_first_name</label>
-                    <input type="text" id="update_team_m_first_name" placeholder="team_m_first_name" class="form-control"/>
+                    <label for="team_m_first_name">Team M First Name</label>
+                    <input type="text" id="update_team_m_first_name" placeholder="Team M First Name" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="team_m_last_name">team_m_last_name</label>
-                    <input type="text" id="update_team_m_last_name" placeholder="team_m_last_name" class="form-control"/>
+                    <label for="team_m_last_name">Team M Last Name</label>
+                    <input type="text" id="update_team_m_last_name" placeholder="Team M Last Name" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="team_m_position">team_m_position</label>
-                    <input type="text" id="update_team_m_position" placeholder="team_m_position" class="form-control"/>
+                    <label for="team_m_position">Team M Position</label>
+                    <input type="text" id="update_team_m_position" placeholder="Team M Position" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="team_m_employement_status">team_m_employement_status</label>
-                    <input type="text" id="update_team_m_employement_status" placeholder="team_m_employement_status" class="form-control"/>
+                    <label for="team_m_employement_status">Team M Position Employement Status</label>
+                    <input type="text" id="update_team_m_employement_status" placeholder="Team M Position Employement Status" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="team_id">team_id</label>
-                    <input type="text" id="update_team_id" placeholder="team_id" class="form-control"/>
+                    <label for="team_id">Team ID</label>
+                    <input type="text" id="update_team_id" placeholder="Team ID" class="form-control"/>
                 </div>
 
             </div>

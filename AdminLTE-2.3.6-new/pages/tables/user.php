@@ -138,7 +138,7 @@
           </a>
           
         </li>
-		<li class="treeview">
+		<li class="active">
           <a href="user.php">
             <i class="fa fa-table"></i> <span>USERS</span>
             

@@ -15,8 +15,7 @@
 					  <th>project_team</th>
 					  <th>project_status</th>
 					  <th>user_id</th>
-							<th>Update</th>
-							<th>Delete</th>
+							
 						</tr>';
 
 	$query = "SELECT * FROM projects";
@@ -42,12 +41,7 @@
 				 <td>'. $row['project_status'] . '</td>
                 <td>'. $row['user_id'] . '</td>
 				
-				<td>
-					<button onclick="GetProjectDetails('.$row['id'].')" class="btn btn-warning">Update</button>
-				</td>
-				<td>
-					<button onclick="DeleteProject('.$row['id'].')" class="btn btn-danger">Delete</button>
-				</td>
+				
     		</tr>';
     		
     	}
@@ -77,8 +71,8 @@
 					  <th>Project Team</th>
 					  <th>Project Status</th>
 					  <th>User ID</th>
-							<th>Actions</th>
-					
+							
+					<th>Actions</th>
 						</tr>';
 
 	$query = "SELECT * FROM projects";
@@ -105,9 +99,7 @@
 				
 				<td>
 				<button onclick="ViewProject('.$row['id'].')" class="btn btn-info">View</button>
-					<button onclick="GetProjectDetails('.$row['id'].')" class="btn btn-warning">Update</button>
-			
-					<button onclick="DeleteProject('.$row['id'].')" class="btn btn-danger">Delete</button>
+					
 				</td>
     		</tr>';
     		

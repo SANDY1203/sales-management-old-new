@@ -92,11 +92,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-<<<<<<< HEAD
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-=======
                  <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
->>>>>>> origin/combine
                 </div>
               </li>
             </ul>
@@ -142,69 +138,8 @@
           </a>
           
         </li>
-		<li class="treeview">
-<<<<<<< HEAD
-          <a href="user.php">
-            <i class="fa fa-table"></i> <span>USERS</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-          <a href="company.php">
-            <i class="fa fa-table"></i> <span>COMPANY</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-          <a href="contact.php">
-            <i class="fa fa-table"></i> <span>CONTACT</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-          <a href="feedback.php">
-            <i class="fa fa-table"></i> <span>FEEDBACK</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-          <a href="question.php">
-            <i class="fa fa-table"></i> <span>QUESTION</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-=======
->>>>>>> origin/combine
-          <a href="project.php">
-            <i class="fa fa-table"></i> <span>PROJECT</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-<<<<<<< HEAD
-          <a href="proserv.php">
-            <i class="fa fa-table"></i> <span>PROSERV</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-          <a href="proserv_project.php">
-            <i class="fa fa-table"></i> <span>PROSERV PROJECT</span>
-            
-          </a>
-          
-        </li>
-		<li class="treeview">
-=======
->>>>>>> origin/combine
+
+		<li class="active">
           <a href="team.php">
             <i class="fa fa-table"></i> <span>TEAM</span>
             
@@ -262,15 +197,15 @@
 
                 <div class="form-group">
                     <label for="team_id">Team ID</label>
-                    <input type="text" id="team_id" placeholder="team_id" class="form-control"/>
+                    <input type="text" id="team_id" placeholder="Team ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="team_name">team_name</label>
-                    <input type="text" id="team_name" placeholder="team_name" class="form-control"/>
+                    <label for="team_name">Team Name</label>
+                    <input type="text" id="team_name" placeholder="Team Name" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="team_lead">team_lead</label>
-                    <input type="text" id="team_lead" placeholder="team_lead" class="form-control"/>
+                    <label for="team_lead">Team Lead</label>
+                    <input type="text" id="team_lead" placeholder="Team Lead" class="form-control"/>
                 </div>
 
                 
@@ -296,12 +231,12 @@
 
                      
 				<div class="form-group">
-                    <label for="team_name">team_name</label>
-                    <input type="text" id="update_team_name" placeholder="team_name" class="form-control"/>
+                    <label for="team_name">Team Name</label>
+                    <input type="text" id="update_team_name" placeholder="Team Name" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="team_lead">team_lead</label>
-                    <input type="text" id="update_team_lead" placeholder="team_lead" class="form-control"/>
+                    <label for="team_lead">Team Lead</label>
+                    <input type="text" id="update_team_lead" placeholder="Team Lead" class="form-control"/>
                 </div>
 
                

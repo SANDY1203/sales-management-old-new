@@ -159,7 +159,7 @@
           </a>
           
         </li>
-		<li class="treeview">
+		<li class="active">
           <a href="feedback.php">
             <i class="fa fa-table"></i> <span>FEEDBACK</span>
             
@@ -255,39 +255,39 @@
                     <input type="text" id="id22" placeholder="ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="user_id">user_id</label>
-                    <input type="text" id="user_id2" placeholder="user_id" class="form-control"/>
+                    <label for="user_id">User ID</label>
+                    <input type="text" id="user_id2" placeholder="User ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_1">ans_1</label>
-                    <input type="text" id="ans_1" placeholder="ans_1" class="form-control"/>
+                    <label for="ans_1">Ans-1</label>
+                    <input type="text" id="ans_1" placeholder="Ans-1" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="ans_2">ans_2</label>
-                    <input type="text" id="ans_2" placeholder="ans_2" class="form-control"/>
+                    <label for="ans_2">Ans-2</label>
+                    <input type="text" id="ans_2" placeholder="Ans-2" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_3">ans_3</label>
-                    <input type="text" id="ans_3" placeholder="ans_3" class="form-control"/>
+                    <label for="ans_3">Ans-3</label>
+                    <input type="text" id="ans_3" placeholder="Ans-3" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_4">ans_4</label>
-                    <input type="text" id="ans_4" placeholder="ans_4" class="form-control"/>
+                    <label for="ans_4">Ans-4</label>
+                    <input type="text" id="ans_4" placeholder="Ans-4" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_5">ans_5</label>
-                    <input type="text" id="ans_5" placeholder="ans_5" class="form-control"/>
+                    <label for="ans_5">Ans-5</label>
+                    <input type="text" id="ans_5" placeholder="Ans-5" class="form-control"/>
                 </div>
 
                 
 				<div class="form-group">
-                    <label for="remarks">remarks</label>
-                    <input type="text" id="remarks" placeholder="remarks" class="form-control"/>
+                    <label for="remarks">Remarks</label>
+                    <input type="text" id="remarks" placeholder="Remarks" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="contact_id">contact_id</label>
-                    <input type="text" id="contact_id" placeholder="contact_id" class="form-control"/>
+                    <label for="contact_id">Contact ID</label>
+                    <input type="text" id="contact_id" placeholder="Contact ID" class="form-control"/>
                 </div>
 
             </div>
@@ -310,39 +310,39 @@
 
                      
 				<div class="form-group">
-                    <label for="user_id">user_id</label>
-                    <input type="text" id="update_user_id1" placeholder="user_id" class="form-control"/>
+                    <label for="user_id">User ID</label>
+                    <input type="text" id="update_user_id1" placeholder="User ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_1">ans_1</label>
-                    <input type="text" id="update_ans_1" placeholder="ans_1" class="form-control"/>
+                    <label for="ans_1">Ans-1</label>
+                    <input type="text" id="update_ans_1" placeholder="Ans-1" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="ans_2">ans_2</label>
-                    <input type="text" id="update_ans_2" placeholder="ans_2" class="form-control"/>
+                    <label for="ans_2">Ans-2</label>
+                    <input type="text" id="update_ans_2" placeholder="Ans-2" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_3">ans_3</label>
-                    <input type="text" id="update_ans_3" placeholder="ans_3" class="form-control"/>
+                    <label for="ans_3">Ans-3</label>
+                    <input type="text" id="update_ans_3" placeholder="Ans-3" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_4">ans_4</label>
-                    <input type="text" id="update_ans_4" placeholder="ans_4" class="form-control"/>
+                    <label for="ans_4">Ans-4</label>
+                    <input type="text" id="update_ans_4" placeholder="Ans-4" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_5">ans_5</label>
-                    <input type="text" id="update_ans_5" placeholder="ans_5" class="form-control"/>
+                    <label for="ans_5">Ans-5</label>
+                    <input type="text" id="update_ans_5" placeholder="Ans-5" class="form-control"/>
                 </div>
 
                 
 				<div class="form-group">
-                    <label for="remarks">remarks</label>
-                    <input type="text" id="update_remarks" placeholder="remarks" class="form-control"/>
+                    <label for="remarks">Remarks</label>
+                    <input type="text" id="update_remarks" placeholder="Remarks" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="contact_id">contact_id</label>
-                    <input type="text" id="update_contact_id" placeholder="contact_id" class="form-control"/>
+                    <label for="contact_id">Contact ID</label>
+                    <input type="text" id="update_contact_id" placeholder="Contact ID" class="form-control"/>
                 </div>
 
             </div>

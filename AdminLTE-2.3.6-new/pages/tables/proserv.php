@@ -180,7 +180,7 @@
           </a>
           
         </li>
-		<li class="treeview">
+		<li class="active">
           <a href="proserv.php">
             <i class="fa fa-table"></i> <span>PROSERV</span>
             
@@ -255,24 +255,24 @@
                     <input type="text" id="id24" placeholder="ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="product_name">product_name</label>
-                    <input type="text" id="product_name" placeholder="product_name" class="form-control"/>
+                    <label for="product_name">Product Name</label>
+                    <input type="text" id="product_name" placeholder="Product Name" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="product_description">product_description</label>
-                    <input type="text" id="product_description" placeholder="product_description" class="form-control"/>
+                    <label for="product_description">Product Description</label>
+                    <input type="text" id="product_description" placeholder="Product Description" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="product_start_price">product_start_price</label>
-                    <input type="integer" id="product_start_price" placeholder="product_start_price" class="form-control"/>
+                    <label for="product_start_price">Product Start Price</label>
+                    <input type="integer" id="product_start_price" placeholder="Product Start Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="product_end_price">product_end_price</label>
-                    <input type="integer" id="product_end_price" placeholder="product_end_price" class="form-control"/>
+                    <label for="product_end_price">Product End Price</label>
+                    <input type="integer" id="product_end_price" placeholder="Product End Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="category">category</label>
+                    <label for="category">Category</label>
                     <select class="selectpicker" id="category">
   <option>service</option>
   <option>product</option>
@@ -301,24 +301,24 @@
 
                      
 				<div class="form-group">
-                    <label for="product_name">product_name</label>
-                    <input type="text" id="update_product_name" placeholder="product_name" class="form-control"/>
+                    <label for="product_name">Product Name</label>
+                    <input type="text" id="update_product_name" placeholder="Product Name" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_1">product_description</label>
-                    <input type="text" id="update_product_description" placeholder="product_description" class="form-control"/>
+                    <label for="ans_1">Product Description</label>
+                    <input type="text" id="update_product_description" placeholder="Product Description" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="ans_2">product_start_price</label>
-                    <input type="integer" id="update_product_start_price" placeholder="product_start_price" class="form-control"/>
+                    <label for="ans_2">Product Start Price</label>
+                    <input type="integer" id="update_product_start_price" placeholder="Product Start Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_3">product_end_price</label>
-                    <input type="integer" id="update_product_end_price" placeholder="product_end_price" class="form-control"/>
+                    <label for="ans_3">Product End Price</label>
+                    <input type="integer" id="update_product_end_price" placeholder="Product End Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="ans_4">category</label>
+                    <label for="ans_4">Category</label>
                     <select class="selectpicker" id="update_category">
   <option>service</option>
   <option>product</option>

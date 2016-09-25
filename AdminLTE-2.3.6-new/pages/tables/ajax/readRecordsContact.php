@@ -8,7 +8,7 @@
 							<th>ID</th>
 					  <th>Name</th>
                       <th>Position</th>
-                      <th>Nmuber-1</th>
+                      <th>Number-1</th>
 					  <th>Number-2</th>
 					  <th>Email-1</th>
 					  <th>Email-2</th>

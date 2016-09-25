@@ -59,7 +59,7 @@ function DeleteUser(id) {
 function DeleteUser1() {
     var conf = confirm("Are you sure, do you really want to delete User?");
     if (conf == true) {
-		var id = $("#hidden_delete_user_id").val();
+		var id = $("").val();
 		
         $.post("ajax/deleteUser.php", {
                 id: id

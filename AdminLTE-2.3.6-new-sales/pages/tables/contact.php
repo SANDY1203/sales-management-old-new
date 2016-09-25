@@ -92,11 +92,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-<<<<<<< HEAD
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-=======
                  <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
->>>>>>> origin/combine
                 </div>
               </li>
             </ul>
@@ -131,11 +127,7 @@
               </span>
         </div>
       </form>
-<<<<<<< HEAD
-           <!-- /.search form -->
-=======
       <!-- /.search form -->
->>>>>>> origin/combine
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
 	          
@@ -145,13 +137,8 @@
             
           </a>
           
-<<<<<<< HEAD
-       
         </li>
-=======
-        </li>
-		
->>>>>>> origin/combine
+	
 		<li class="treeview">
           <a href="company.php">
             <i class="fa fa-table"></i> <span>COMPANY</span>
@@ -159,20 +146,14 @@
           </a>
           
         </li>
-		<li class="treeview">
+		<li class="active">
           <a href="contact.php">
             <i class="fa fa-table"></i> <span>CONTACT</span>
             
           </a>
           
         </li>
-<<<<<<< HEAD
-		
-       
-          
-        </li>
-=======
->>>>>>> origin/combine
+	
 		<li class="treeview">
           <a href="project.php">
             <i class="fa fa-table"></i> <span>PROJECT</span>
@@ -194,11 +175,8 @@
           </a>
           
         </li>
-<<<<<<< HEAD
-	
-=======
+
 		
->>>>>>> origin/combine
         
         
       </ul>
@@ -245,35 +223,35 @@
                     <input type="text" id="id21" placeholder="ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="contact_name">contact_name</label>
-                    <input type="text" id="contact_name" placeholder="contact_name" class="form-control"/>
+                    <label for="contact_name">Contact Name</label>
+                    <input type="text" id="contact_name" placeholder="Contact Name" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="contact_position">contact_position</label>
-                    <input type="text" id="contact_position" placeholder="contact_position" class="form-control"/>
+                    <label for="contact_position">Contact Position</label>
+                    <input type="text" id="contact_position" placeholder="Contact Position" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="contact_number_one">contact_number_one</label>
-                    <input type="text" id="contact_number_one" placeholder="contact_number_one" class="form-control"/>
+                    <label for="contact_number_one">Contact Number-1</label>
+                    <input type="text" id="contact_number_one" placeholder="Contact Number-1" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="contact_number_two">contact_number_two</label>
-                    <input type="text" id="contact_number_two" placeholder="contact_number_two" class="form-control"/>
+                    <label for="contact_number_two">Contact Number-2</label>
+                    <input type="text" id="contact_number_two" placeholder="Contact Number-2" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="contact_email_one">contact_email_one</label>
-                    <input type="text" id="contact_email_one" placeholder="contact_email_one" class="form-control"/>
+                    <label for="contact_email_one">Contact Email-1</label>
+                    <input type="text" id="contact_email_one" placeholder="Contact Email-1" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="contact_email_two">contact_email_two</label>
-                    <input type="text" id="contact_email_two" placeholder="contact_email_two" class="form-control"/>
+                    <label for="contact_email_two">Contact Email-2</label>
+                    <input type="text" id="contact_email_two" placeholder="Contact Email-2" class="form-control"/>
                 </div>
 
                 
 				<div class="form-group">
-                    <label for="contact_company_allo">contact_company_allo</label>
-                    <input type="text" id="contact_company_allo" placeholder="contact_company_allo" class="form-control"/>
+                    <label for="contact_company_allo">Contact Company Alloc</label>
+                    <input type="text" id="contact_company_allo" placeholder="Contact Company Alloc" class="form-control"/>
                 </div>
 				
 
@@ -300,35 +278,35 @@
                      
 				
 				<div class="form-group">
-                    <label for="contact_name">contact_name</label>
-                    <input type="text" id="update_contact_name" placeholder="contact_name" class="form-control"/>
+                    <label for="contact_name">Contact Name</label>
+                    <input type="text" id="update_contact_name" placeholder="Contact Name" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="contact_position">contact_position</label>
-                    <input type="text" id="update_contact_position" placeholder="contact_position" class="form-control"/>
+                    <label for="contact_position">Contact Position</label>
+                    <input type="text" id="update_contact_position" placeholder="Contact Position" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="contact_number_one">contact_number_one</label>
-                    <input type="text" id="update_contact_number_one" placeholder="contact_number_one" class="form-control"/>
+                    <label for="contact_number_one">Contact Number-1</label>
+                    <input type="text" id="update_contact_number_one" placeholder="Contact Number-1" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="contact_number_two">contact_number_two</label>
-                    <input type="text" id="update_contact_number_two" placeholder="contact_number_two" class="form-control"/>
+                    <label for="contact_number_two">Contact Number-2</label>
+                    <input type="text" id="update_contact_number_two" placeholder="Contact Number-2" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="contact_email_one">contact_email_one</label>
-                    <input type="text" id="update_contact_email_one" placeholder="contact_email_one" class="form-control"/>
+                    <label for="contact_email_one">Contact Email-1</label>
+                    <input type="text" id="update_contact_email_one" placeholder="Contact Email-1" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="contact_email_two">contact_email_two</label>
-                    <input type="text" id="update_contact_email_two" placeholder="contact_email_two" class="form-control"/>
+                    <label for="contact_email_two">Contact Email-2</label>
+                    <input type="text" id="update_contact_email_two" placeholder="Contact Email-2" class="form-control"/>
                 </div>
 
                 
 				<div class="form-group">
-                    <label for="contact_company_allo">contact_company_allo</label>
-                    <input type="text" id="update_contact_company_allo" placeholder="contact_company_allo" class="form-control"/>
+                    <label for="contact_company_allo">Contact Company Alloc</label>
+                    <input type="text" id="update_contact_company_allo" placeholder="Contact Company Alloc" class="form-control"/>
                 </div>
 
             </div>

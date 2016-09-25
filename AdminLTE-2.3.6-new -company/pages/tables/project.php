@@ -92,11 +92,10 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-<<<<<<< HEAD
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
-=======
-                 <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
->>>>>>> origin/combine
+
+                  
+            <a href="http://localhost/sales-management/AdminLTE-2.3.6-new/pages/examples/login_sandy.php" class="btn btn-default btn-flat">Sign out</a>
+
                 </div>
               </li>
             </ul>
@@ -121,7 +120,7 @@
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
-      <!-- search form -->
+       <!-- search form -->
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
@@ -134,37 +133,29 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-<<<<<<< HEAD
 	          
         <li class="treeview">
-=======
-	    <li class="treeview">
->>>>>>> origin/combine
           <a href="../../index.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             
           </a>
           
-<<<<<<< HEAD
-       
-          
         </li>
-		<li class="treeview">
-=======
-        </li>      
-        <li class="treeview">
->>>>>>> origin/combine
+		
+		
+		
+		
+		
+		<li class="active">
           <a href="project.php">
             <i class="fa fa-table"></i> <span>PROJECT</span>
             
           </a>
           
-<<<<<<< HEAD
-       
-=======
         </li>
 		
->>>>>>> origin/combine
+		
+        
         
       </ul>
     </section>
@@ -182,8 +173,14 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header">
-			<button class="btn btn-success" data-toggle="modal" data-target="#add_new_record_modal5">Add New Record</button>
-
+			<div id="dom-target123" style="display: none;">
+    <?php 
+        if($_GET){
+        $user_id = $_GET['user_id'];}//Again, do some operation, get the output.
+         /* You have to escape because the result
+                                           will not be valid HTML otherwise. */
+    ?>
+</div>
 			  <div class="col-md-9">
 			                <h1 class="box-title"><b>PROJECT</b></h1>
 			  
@@ -192,7 +189,87 @@
 			
             <!-- /.box-header -->
             <div class="box-body">
-              <div class="records_content5"></div>
+              <?php
+	// include Database connection file 
+	include("ajax/db_connection.php");
+	 if($_GET){
+        $user_id = $_GET['user_id'];
+
+		
+		
+		 // print_r($_GET);       
+    }
+	
+	$query = mysql_query("SELECT * FROM company WHERE user_id = '$user_id'");
+	WHILE ($rows = mysql_fetch_array($query)):
+  
+	  $user_id = $rows['user_id'];
+      $company_id = $rows['company_id'];
+	  $company_name = $rows['company_name']; // print_r($_GET);       
+	  $company_address = $rows['company_address'];
+	  $company_phone = $rows['company_phone'];
+	  $company_email = $rows['company_email'];
+	  $user_id = $rows['user_id'];
+	  endwhile;
+	  
+	$data ='<p align="center"><strong>WELCOME &nbsp; '. $company_name . '</strong></p>
+	<p align="right"><strong>NAME:'. $company_name . '</strong></p>
+	<p align="right"><strong>ADDRESS:'. $company_address . '</strong></p>
+	<p align="right"><strong>PH NO:'. $company_phone . '</strong></p>
+    <p align="right"><strong>EMAIL:'. $company_email . '</strong>';
+	
+
+	// Design initial table header 
+	$data .= '<table class="table table-bordered table-striped">
+						<tr>
+							<th>id</th>
+					  <th>project_name</th>
+                      <th>project_desc</th>
+                      <th>project_company_id</th>
+					  <th>project_price</th>
+					  <th>project_team</th>
+					  <th>project_status</th>
+					  <th>user_id</th>
+							
+						</tr>';
+
+	$query = "SELECT * FROM projects WHERE project_company_id = '$company_id' ";
+
+	if (!$result = mysql_query($query)) {
+        exit(mysql_error());
+    }
+
+    // if query results contains rows then featch those rows 
+    if(mysql_num_rows($result) > 0)
+    {
+    	$number = 1;
+    	while($row = mysql_fetch_assoc($result))
+    	{
+    		$data .= '<tr>
+				<td>'. $row['id'] . '</td>
+			     <td>'. $row['project_name'] . '</td>
+				 <td>'. $row['project_desc'] . '</td>
+				 <td>'. $row['project_company_id'] . '</td>
+				 <td>'. $row['project_price'] . '</td>
+				 <td>'. $row['project_team'] . '</td>
+				 <td>'. $row['project_status'] . '</td>
+                <td>'. $row['user_id'] . '</td>
+				
+				
+    		</tr>';
+    		
+    	}
+    }
+    else
+    {
+    	// records now found 
+    	$data .= '<tr><td colspan="6">Records not found!</td></tr>';
+    }
+
+    $data .= '</table>';
+
+    echo $data;
+?>
             </div>
             <!-- /.box-body -->
 			<!-- Modal - Add New Record/User -->
@@ -212,34 +289,30 @@
                 </div>
 				
 				<div class="form-group">
-                    <label for="project_name">project_name</label>
-                    <input type="text" id="project_name" placeholder="project_name" class="form-control"/>
+                    <label for="project_name">Project Name</label>
+                    <input type="text" id="project_name" placeholder="Project Name" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="project_desc">project_desc</label>
-                    <input type="text" id="project_desc" placeholder="project_desc" class="form-control"/>
+                    <label for="project_desc">Project Desc</label>
+                    <input type="text" id="project_desc" placeholder="Project Desc" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_company_id">project_company_id</label>
-                    <input type="text" id="project_company_id" placeholder="project_company_id" class="form-control"/>
+                    <label for="project_company_id">Project Company ID</label>
+                    <input type="text" id="project_company_id" placeholder="Project Company ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_price">project_price</label>
-                    <input type="text" id="project_price" placeholder="project_price" class="form-control"/>
+                    <label for="project_price">Project Price</label>
+                    <input type="text" id="project_price" placeholder="Project Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_team">project_team</label>
-                    <input type="text" id="project_team" placeholder="project_team" class="form-control"/>
+                    <label for="project_team">Project Team</label>
+                    <input type="text" id="project_team" placeholder="Project Team" class="form-control"/>
                 </div>
 
                 
 				<div class="form-group">
-                    <label for="project_status">project_status</label>
-<<<<<<< HEAD
-                    <input type="text" id="project_status" placeholder="project_status" class="form-control"/>
-                </div>
-=======
+                    <label for="project_status">Project Status</label>
 					<select class="selectpicker" id="project_status">
   <option>lead</option>
   <option>opportunity</option>
@@ -258,11 +331,10 @@
   <option>completed</option>
   </select> 
                     </div>
->>>>>>> origin/combine
 				
 				<div class="form-group">
-                    <label for="user_id">user_id</label>
-                    <input type="text" id="user_id3" placeholder="user_id" class="form-control"/>
+                    <label for="user_id">User ID</label>
+                    <input type="text" id="user_id3" placeholder="User ID" class="form-control"/>
                 </div>
 
             </div>
@@ -285,34 +357,30 @@
             </div>
             <div class="modal-body">
 			<div class="form-group">
-                    <label for="project_name">project_name</label>
-                    <input type="text" id="update_project_name" placeholder="project_name" class="form-control"/>
+                    <label for="project_name">Project Name</label>
+                    <input type="text" id="update_project_name" placeholder="Project Name" class="form-control"/>
                 </div>
 
                 <div class="form-group">
-                    <label for="project_desc">project_desc</label>
-                    <input type="text" id="update_project_desc" placeholder="project_desc" class="form-control"/>
+                    <label for="project_desc">Project Desc</label>
+                    <input type="text" id="update_project_desc" placeholder="Project Desc" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_company_id">project_company_id</label>
-                    <input type="text" id="update_project_company_id" placeholder="project_company_id" class="form-control"/>
+                    <label for="project_company_id">Project Company ID</label>
+                    <input type="text" id="update_project_company_id" placeholder="Project Company ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_price">project_price</label>
-                    <input type="text" id="update_project_price" placeholder="project_price" class="form-control"/>
+                    <label for="project_price">Project Price</label>
+                    <input type="text" id="update_project_price" placeholder="Project Price" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="project_team">project_team</label>
-                    <input type="text" id="update_project_team" placeholder="project_team" class="form-control"/>
+                    <label for="project_team">Project Team</label>
+                    <input type="text" id="update_project_team" placeholder="Project Team" class="form-control"/>
                 </div>
 
                 
 				<div class="form-group">
-                    <label for="project_status">project_status</label>
-<<<<<<< HEAD
-                    <input type="text" id="update_project_status" placeholder="project_status" class="form-control"/>
-                </div>
-=======
+                    <label for="project_status">Project Status</label>
 					<select class="selectpicker" id="update_project_status">
   <option>lead</option>
   <option>opportunity</option>
@@ -331,12 +399,11 @@
   <option>completed</option>
   </select> 
                     </div>
->>>>>>> origin/combine
 
                      
 				<div class="form-group">
-                    <label for="user_id">user_id</label>
-                    <input type="text" id="update_user_id2" placeholder="user_id" class="form-control"/>
+                    <label for="user_id">User ID</label>
+                    <input type="text" id="update_user_id2" placeholder="User ID" class="form-control"/>
                 </div>
 				
 

@@ -194,7 +194,7 @@
           </a>
           
         </li>
-		<li class="treeview">
+		<li class="active">
           <a href="team.php">
             <i class="fa fa-table"></i> <span>TEAM</span>
             
@@ -252,15 +252,15 @@
 
                 <div class="form-group">
                     <label for="team_id">Team ID</label>
-                    <input type="text" id="team_id" placeholder="team_id" class="form-control"/>
+                    <input type="text" id="team_id" placeholder="Team ID" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="team_name">team_name</label>
-                    <input type="text" id="team_name" placeholder="team_name" class="form-control"/>
+                    <label for="team_name">Team Name</label>
+                    <input type="text" id="team_name" placeholder="Team Name" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="team_lead">team_lead</label>
-                    <input type="text" id="team_lead" placeholder="team_lead" class="form-control"/>
+                    <label for="team_lead">Team Lead</label>
+                    <input type="text" id="team_lead" placeholder="Team Lead" class="form-control"/>
                 </div>
 
                 
@@ -286,12 +286,12 @@
 
                      
 				<div class="form-group">
-                    <label for="team_name">team_name</label>
-                    <input type="text" id="update_team_name" placeholder="team_name" class="form-control"/>
+                    <label for="team_name">Team Name</label>
+                    <input type="text" id="update_team_name" placeholder="Team Name" class="form-control"/>
                 </div>
 				<div class="form-group">
-                    <label for="team_lead">team_lead</label>
-                    <input type="text" id="update_team_lead" placeholder="team_lead" class="form-control"/>
+                    <label for="team_lead">Team Lead</label>
+                    <input type="text" id="update_team_lead" placeholder="Team Lead" class="form-control"/>
                 </div>
 
                

@@ -1,3 +1,8 @@
+<?php 
+        if($_GET){
+        $user_id = $_GET['user_id'];}
+		?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,11 +47,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-<<<<<<< HEAD
-    <a href="index.html" class="logo">
-=======
     <a href="index.php" class="logo">
->>>>>>> origin/combine
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
@@ -121,48 +122,30 @@
               </span>
         </div>
       </form>
-      <!-- /.search form -->
+     <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
 	          
-<<<<<<< HEAD
-        <li class="treeview">
-=======
-        <li class="active treeview">
-<<<<<<< HEAD
-          <a href="index.html">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            
-          
-        </li>
-		<li class="active treeview">
-=======
->>>>>>> origin/combine
+        <li>
+		<li class="active">
           <a href="index.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             
           </a>
           
-<<<<<<< HEAD
-        <li class="treeview">
-=======
-        <li class="active treeview">
->>>>>>> origin/combine
->>>>>>> origin/combine
-          <a href="pages/tables/project.php">
+        </li>
+		
+		<li class="treeview">
+          <a href="pages/tables/project.php?user_id=<?php echo $user_id ?>">
             <i class="fa fa-table"></i> <span>PROJECT</span>
             
           </a>
           
-<<<<<<< HEAD
-       
-		
-        
-        
-=======
         </li>
 		
->>>>>>> origin/combine
+		
+        
+        
       </ul>
     </section>
     <!-- /.sidebar -->
